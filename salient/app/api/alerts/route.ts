@@ -11,6 +11,8 @@ export async function GET() {
     kind: a.kind,
     datePublished: a.datePublished,
     url: a.url,
+    excerpt: a.excerpt,
+    live: a.id.startsWith("live-"),
     hasRun: fs.existsSync(path.join(config.runsDir, `${a.id}.json`))
   }));
   let evalSummary = null;

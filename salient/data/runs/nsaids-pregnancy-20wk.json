@@ -1,7 +1,7 @@
 {
   "alertId": "nsaids-pregnancy-20wk",
   "title": "NSAIDs at 20 weeks or later in pregnancy",
-  "createdAt": "2026-07-18T23:25:01.416Z",
+  "createdAt": "2026-07-18T23:43:53.497Z",
   "csc": {
     "id": "csc-nsaids-pregnancy-20wk",
     "alertId": "nsaids-pregnancy-20wk",
@@ -464,6 +464,10 @@
           "dropped": false
         }
       ],
+      "claimAudit": {
+        "proposed": 4,
+        "verified": 4
+      },
       "transcriptEscalation": "The transcript reveals occasional OTC headache analgesic use not captured in the (empty) chart medication list. The specific product was not identified, so possible intermittent NSAID use (e.g., Advil, Aleve) cannot be excluded and should be clarified."
     },
     {
@@ -550,6 +554,10 @@
           "dropped": false
         }
       ],
+      "claimAudit": {
+        "proposed": 4,
+        "verified": 4
+      },
       "transcriptEscalation": "The transcript reveals activity-related back pain from scoliosis expected to worsen with pregnancy; while she currently takes nothing, this is a realistic pathway to self-directed OTC NSAID use (ibuprofen/naproxen) later in pregnancy and warrants preemptive counseling now."
     },
     {
@@ -625,7 +633,11 @@
           "supportVerified": true,
           "dropped": false
         }
-      ]
+      ],
+      "claimAudit": {
+        "proposed": 3,
+        "verified": 3
+      }
     },
     {
       "caseId": "0375c3247c5d",
@@ -721,16 +733,20 @@
           "dropped": false
         }
       ],
+      "claimAudit": {
+        "proposed": 5,
+        "verified": 5
+      },
       "transcriptEscalation": "The transcript confirms near-daily opioid use and a planned taper during pregnancy; as opioid doses decrease, she may be tempted to self-treat breakthrough pain with OTC NSAIDs (ibuprofen, naproxen), making preemptive NSAID-avoidance counseling more important than the chart alone would suggest."
     }
   ],
   "routed": {},
   "timings": {
-    "comprehend": 8898,
-    "scan": 33,
-    "adjudicate": 71742,
+    "comprehend": 1,
+    "scan": 31,
+    "adjudicate": 6,
     "verify": 0,
-    "total": 80673
+    "total": 38
   },
   "warnings": []
 }

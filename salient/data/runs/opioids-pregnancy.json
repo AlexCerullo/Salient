@@ -1,7 +1,7 @@
 {
   "alertId": "opioids-pregnancy",
   "title": "Opioid use in pregnancy and neonatal opioid withdrawal syndrome",
-  "createdAt": "2026-07-18T23:25:45.193Z",
+  "createdAt": "2026-07-18T23:43:55.430Z",
   "csc": {
     "id": "csc-opioids-pregnancy",
     "alertId": "opioids-pregnancy",
@@ -439,6 +439,10 @@
           "dropped": false
         }
       ],
+      "claimAudit": {
+        "proposed": 5,
+        "verified": 5
+      },
       "transcriptEscalation": "The chart lists the opioids without frequency, but the transcript reveals near-daily use of both agents ('most days is the honest answer, lately') and a near-miss abrupt discontinuation attempt — both materially raise fetal/maternal risk and urgency of a structured taper."
     }
   ],
@@ -448,11 +452,11 @@
     ]
   },
   "timings": {
-    "comprehend": 10036,
-    "scan": 40,
-    "adjudicate": 15903,
+    "comprehend": 1,
+    "scan": 36,
+    "adjudicate": 2,
     "verify": 0,
-    "total": 25979
+    "total": 39
   },
   "warnings": []
 }

@@ -9,7 +9,10 @@ export async function POST(req: NextRequest, context: { params: Promise<{ caseId
   const entry = {
     timestamp: new Date().toISOString(),
     caseId,
+    alertId: body.alertId || body.caseSnapshot?.alertId || "",
+    patientName: body.patientName || body.caseSnapshot?.patient?.name || "",
     decision: body.decision,
+    actor: body.actor || "clinician (demo)",
     note: body.note || "",
     caseSnapshotHash: crypto.createHash("sha256").update(JSON.stringify(body.caseSnapshot || {})).digest("hex")
   };
