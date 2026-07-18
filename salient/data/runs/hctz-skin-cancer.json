@@ -1,7 +1,7 @@
 {
   "alertId": "hctz-skin-cancer",
   "title": "Hydrochlorothiazide and non-melanoma skin cancer",
-  "createdAt": "2026-07-18T23:00:59.850Z",
+  "createdAt": "2026-07-18T23:26:34.617Z",
   "csc": {
     "id": "csc-hctz-skin-cancer",
     "alertId": "hctz-skin-cancer",
@@ -15,23 +15,27 @@
     "drugs": {
       "names": [
         "hydrochlorothiazide",
-        "hctz"
+        "hctz",
+        "microzide",
+        "thiazide"
       ],
       "rxnormCodes": [
         "5487"
-      ]
+      ],
+      "otcAvailable": false
     },
     "population": {},
     "requiredMonitoring": [
-      "regular skin cancer screening / routine skin examination"
+      "regular skin cancer screening / dermatologic examination"
     ],
-    "recommendedActionTemplate": "For {patient}, counsel on sun protection while taking {medications}, recommend routine skin examination, and document shared decision-making with {prescriber}.",
-    "rationale": "Hydrochlorothiazide labeling describes increased non-melanoma skin cancer risk and recommends sun protection and regular skin checks."
+    "recommendedActionTemplate": "For {patient}, counsel on sun protection (sunscreen, protective clothing, limiting UV exposure) while taking {medications}, recommend routine skin cancer screenings, and document shared decision-making with {prescriber}.",
+    "rationale": "FDA-approved label changes for hydrochlorothiazide describe a small increased risk of non-melanoma skin cancer, particularly squamous cell carcinoma, and recommend sun protection and regular skin cancer screenings for patients taking the drug."
   },
   "funnel": {
     "total": 25,
     "scanCandidates": 3,
-    "actionable": 3
+    "actionable": 3,
+    "monitored": 0
   },
   "scan": {
     "total": 25,
@@ -39,7 +43,8 @@
       "drugMatched": 3,
       "populationMatched": 25,
       "labMatched": 25,
-      "interactionMatched": 25
+      "interactionMatched": 25,
+      "monitorMatched": 0
     },
     "candidates": [
       {
@@ -69,7 +74,8 @@
             "resourceType": "MedicationRequest",
             "resourceId": "4b4735a2-ee12-ec86-2f73-08977934c44b"
           }
-        ]
+        ],
+        "matchType": "exposure"
       },
       {
         "sourceIndex": 10,
@@ -91,7 +97,8 @@
             "resourceType": "MedicationRequest",
             "resourceId": "74919836-2db2-2f73-7dad-412e5b4e0a70"
           }
-        ]
+        ],
+        "matchType": "exposure"
       },
       {
         "sourceIndex": 12,
@@ -113,7 +120,8 @@
             "resourceType": "MedicationRequest",
             "resourceId": "6d4fd363-1ddb-74f8-f443-78d0bc59244d"
           }
-        ]
+        ],
+        "matchType": "exposure"
       }
     ],
     "exclusions": [
@@ -310,10 +318,12 @@
         "prescriber": "Dr. Benita195 VonRueden376",
         "clinic": "GREATER LAWRENCE FAMILY HEALTH CENTER INC"
       },
+      "verdict": "actionable",
       "actionable": true,
-      "priority": "medium",
-      "rationale": "Mr. Wisozk was newly started on hydrochlorothiazide 25 mg daily for essential hypertension. Per the 2020 FDA labeling change, hydrochlorothiazide carries an increased risk of non-melanoma skin cancer, and patients should receive sun-protection counseling and routine skin examinations. Neither the visit note nor the transcript documents any sun-protection or skin-cancer counseling — the clinician counseled only on diuresis, orthostatic symptoms, cramping, and electrolytes. This is a genuine counseling gap for a patient beginning long-term thiazide therapy, but it is not urgent (no reported skin lesions or heightened risk factors documented), so medium priority is appropriate.",
-      "draftedAction": "For Mr. Elias Wisozk, counsel on sun protection (protective clothing, broad-spectrum sunscreen, limiting UV exposure) while taking hydrochlorothiazide 25 mg daily, recommend routine skin examination given the FDA-labeled increased risk of non-melanoma skin cancer with hydrochlorothiazide, and document shared decision-making with Dr. Okafor. This counseling can be added at the already-scheduled 1-month blood pressure recheck.",
+      "matchType": "exposure",
+      "priority": "low",
+      "rationale": "Mr. Wisozk was newly started on hydrochlorothiazide 25 mg daily today for new essential hypertension, so the FDA label-change counseling on non-melanoma skin cancer risk, sun protection, and routine skin checks applies now and is best delivered at initiation.",
+      "draftedAction": "At the 1-month blood pressure recheck (or via a patient message now), the prescribing clinician (Dr. Okafor) should counsel Mr. Wisozk on the small increased risk of non-melanoma skin cancer with hydrochlorothiazide: use broad-spectrum sunscreen, protective clothing, and limit UV exposure, especially with his planned daily outdoor walking. Recommend routine skin self-checks and periodic skin cancer screening/dermatologic examination, and document the shared decision-making. Do not stop hydrochlorothiazide — the absolute risk is small and the antihypertensive benefit is appropriate for his new hypertension.",
       "matchedEvidence": [
         {
           "kind": "medication",
@@ -338,7 +348,7 @@
       "routeTo": "Dr. Benita195 VonRueden376",
       "claims": [
         {
-          "text": "Patient has an active order for Hydrochlorothiazide 25 MG Oral Tablet.",
+          "text": "Patient has an active prescription for hydrochlorothiazide 25 mg oral tablet.",
           "citation": {
             "type": "fhir",
             "resourceType": "MedicationRequest",
@@ -349,42 +359,21 @@
           "dropped": false
         },
         {
-          "text": "A second hydrochlorothiazide 25 MG oral tablet order is also documented for this patient.",
-          "citation": {
-            "type": "fhir",
-            "resourceType": "MedicationRequest",
-            "resourceId": "4b4735a2-ee12-ec86-2f73-08977934c44b"
-          },
-          "verified": true,
-          "supportVerified": true,
-          "dropped": false
-        },
-        {
-          "text": "Hydrochlorothiazide was newly initiated at this visit for essential hypertension.",
+          "text": "Hydrochlorothiazide was newly started at today's visit for blood pressure control.",
           "citation": {
             "type": "transcript",
-            "quote": "First, a medication: hydrochlorothiazide, 25 milligrams, one tablet every morning. It's a water pill — it lowers pressure by helping you offload salt and fluid."
+            "quote": "First, a medication: hydrochlorothiazide, 25 milligrams, one tablet every morning."
           },
           "verified": true,
           "supportVerified": true,
           "dropped": false
         },
         {
-          "text": "The essential hypertension diagnosis driving the new hydrochlorothiazide prescription is documented.",
+          "text": "The indication is essential hypertension, so ongoing (chronic) HCTZ exposure is expected.",
           "citation": {
             "type": "fhir",
             "resourceType": "Condition",
             "resourceId": "4b4735a2-ee12-ec86-43f9-72c6a9c11cad"
-          },
-          "verified": true,
-          "supportVerified": true,
-          "dropped": false
-        },
-        {
-          "text": "Counseling at initiation covered orthostasis, cramps, and electrolytes, but no sun-protection or skin-cancer counseling was provided.",
-          "citation": {
-            "type": "transcript",
-            "quote": "If you feel lightheaded when you stand, or you get muscle cramps, call us — it can nudge your potassium and sodium, so we'll recheck bloodwork after you've been on it a while."
           },
           "verified": true,
           "supportVerified": true,
@@ -406,10 +395,12 @@
         "prescriber": "Dr. Florance664 Leannon79",
         "clinic": "SUNRISE HEALTHCARE LLC"
       },
+      "verdict": "actionable",
       "actionable": true,
-      "priority": "medium",
-      "rationale": "Mr. Howell was newly started on hydrochlorothiazide 25 mg daily at this visit. FDA labeling changes (2020-08-20) describe increased non-melanoma skin cancer risk with hydrochlorothiazide and recommend sun protection counseling and regular skin examinations. This is especially relevant here: he is an 85-year-old man who reports frequent outdoor activity (daily walks and regular gardening), increasing cumulative sun exposure. Neither the transcript nor the visit note documents any skin-cancer risk counseling, sun-protection advice, or plan for routine skin examination, so the required monitoring is missing.",
-      "draftedAction": "For Mr. Isreal Delbert Howell, counsel on sun protection (broad-spectrum sunscreen, protective clothing/hat, limiting midday sun during morning walks and gardening) while taking Hydrochlorothiazide 25 MG Oral Tablet, recommend routine skin examination with periodic full-body skin checks given the FDA-labeled increased non-melanoma skin cancer risk, and document shared decision-making with the prescribing physician. Add skin-cancer surveillance to the 6-month follow-up plan.",
+      "matchType": "exposure",
+      "priority": "low",
+      "rationale": "Hydrochlorothiazide 25 mg daily was newly started at this visit, and the transcript reveals substantial daily outdoor UV exposure (regular gardening and morning walks), making sun-protection counseling and baseline skin-cancer screening directly relevant now.",
+      "draftedAction": "At the next contact (or via a follow-up call, since HCTZ was just started today), the prescribing clinician should counsel Mr. Howell on sun protection while taking hydrochlorothiazide: daily sunscreen, protective clothing/hat, and limiting midday UV exposure during gardening and walks. Recommend a baseline dermatologic skin examination and periodic skin-cancer screening thereafter, and document shared decision-making. Do not stop or change the HCTZ — the risk is small and the counseling/screening approach is the appropriate response.",
       "matchedEvidence": [
         {
           "kind": "medication",
@@ -427,7 +418,7 @@
       "routeTo": "Dr. Florance664 Leannon79",
       "claims": [
         {
-          "text": "The patient has an active prescription for hydrochlorothiazide 25 mg oral tablet.",
+          "text": "Patient has an active prescription for hydrochlorothiazide 25 mg oral tablet.",
           "citation": {
             "type": "fhir",
             "resourceType": "MedicationRequest",
@@ -438,46 +429,37 @@
           "dropped": false
         },
         {
-          "text": "Hydrochlorothiazide was newly initiated at this visit for blood pressure management.",
+          "text": "Hydrochlorothiazide was newly initiated at this visit for blood pressure control.",
           "citation": {
             "type": "transcript",
-            "quote": "I want to add hydrochlorothiazide, twenty-five milligrams each morning — a mild water pill."
+            "quote": "I want to add hydrochlorothiazide, twenty-five milligrams each morning"
           },
           "verified": true,
           "supportVerified": true,
           "dropped": false
         },
         {
-          "text": "The patient has substantial regular outdoor sun exposure through daily walking and gardening.",
+          "text": "Patient has regular outdoor sun exposure through gardening.",
           "citation": {
             "type": "transcript",
-            "quote": "I still do my walk around the block most mornings."
+            "quote": "The gardening keeps me honest."
           },
           "verified": true,
           "supportVerified": true,
           "dropped": false
         },
         {
-          "text": "Gardening is a frequent activity, further increasing sun exposure while on hydrochlorothiazide.",
+          "text": "Patient walks outdoors most mornings, adding to cumulative UV exposure.",
           "citation": {
             "type": "transcript",
-            "quote": "The garden, mostly. And my daughter and grandson live with me, so there is always some commotion in the house."
-          },
-          "verified": true,
-          "supportVerified": true,
-          "dropped": false
-        },
-        {
-          "text": "Counseling at initiation covered urination timing and dizziness but did not include skin-cancer risk, sun protection, or skin examination.",
-          "citation": {
-            "type": "transcript",
-            "quote": "Take it in the morning and you will mostly be running before lunch. If you feel dizzy or washed out, especially when you stand up, I want to hear about it right away."
+            "quote": "I still do my walk around the block most mornings"
           },
           "verified": true,
           "supportVerified": true,
           "dropped": false
         }
-      ]
+      ],
+      "transcriptEscalation": "The chart alone shows only the HCTZ prescription; the transcript reveals the patient spends significant time outdoors daily (gardening is his main activity plus morning walks), increasing cumulative UV exposure relevant to the HCTZ non-melanoma skin cancer risk."
     },
     {
       "caseId": "c9a5a3e11781",
@@ -493,11 +475,12 @@
         "prescriber": "Dr. Amado512 Adams676",
         "clinic": "BL HEALTHCARE INC DELEWARE"
       },
+      "verdict": "actionable",
       "actionable": true,
+      "matchType": "exposure",
       "priority": "low",
-      "rationale": "Mr. Renner was newly started on hydrochlorothiazide 25 mg daily at this visit. Per the 2020 FDA labeling change, HCTZ carries an increased risk of non-melanoma skin cancer, and patients should be counseled on sun protection and routine skin examination. The transcript shows counseling covered dizziness, cough, and ankle swelling, but no sun-protection or skin-cancer screening counseling was provided or documented. This is a counseling/monitoring gap for a newly initiated therapy rather than an acute safety issue, so priority is low, but action is warranted.",
-      "transcriptEscalation": "No sun-protection or skin-examination counseling was documented during the visit despite new HCTZ initiation; recommend adding this counseling at or before the planned 4-6 week follow-up.",
-      "draftedAction": "For Mr. Julius Renner, counsel on sun protection (sunscreen, protective clothing, limiting UV exposure) while taking hydrochlorothiazide 25 mg daily, recommend routine skin examination for non-melanoma skin cancer, and document shared decision-making with the prescribing physician at the upcoming 4-6 week hypertension follow-up visit.",
+      "rationale": "Mr. Renner was started today on hydrochlorothiazide 25 mg daily for hypertension; the FDA label change recommends sun-protection counseling and routine skin cancer screening for all HCTZ users, and this counseling was not documented at the initiation visit.",
+      "draftedAction": "At the already-scheduled 4-6 week blood pressure follow-up (or sooner by phone/portal message), counsel Mr. Renner on sun protection while taking hydrochlorothiazide: daily sunscreen, protective clothing, and limiting UV exposure, given the small increased risk of non-melanoma skin cancer (especially squamous cell carcinoma). Recommend routine skin checks and advise him to report any new or changing skin lesions; document the counseling and shared decision-making with the prescribing clinician. Do not stop or change the antihypertensive regimen — the risk is small and managed with counseling and surveillance, not discontinuation.",
       "matchedEvidence": [
         {
           "kind": "medication",
@@ -515,7 +498,7 @@
       "routeTo": "Dr. Amado512 Adams676",
       "claims": [
         {
-          "text": "Patient has an active order for Hydrochlorothiazide 25 MG Oral Tablet.",
+          "text": "Patient has an active prescription for hydrochlorothiazide 25 mg oral tablet.",
           "citation": {
             "type": "fhir",
             "resourceType": "MedicationRequest",
@@ -526,20 +509,20 @@
           "dropped": false
         },
         {
-          "text": "The prescriber initiated HCTZ at this visit as part of a new antihypertensive regimen.",
+          "text": "Hydrochlorothiazide was newly initiated at this visit as part of a triple antihypertensive regimen.",
           "citation": {
             "type": "transcript",
-            "quote": "lisinopril ten milligrams once a day, amlodipine two and a half milligrams once a day, and hydrochlorothiazide twenty-five milligrams in the morning — that last one is a water pill."
+            "quote": "hydrochlorothiazide twenty-five milligrams in the morning — that last one is a water pill"
           },
           "verified": true,
           "supportVerified": true,
           "dropped": false
         },
         {
-          "text": "Side-effect counseling addressed dizziness, cough, and ankle swelling but did not include sun protection or skin-cancer screening.",
+          "text": "The visit counseling covered dizziness, cough, and ankle swelling but did not include sun protection or skin cancer screening.",
           "citation": {
             "type": "transcript",
-            "quote": "If you get dizzy, lightheaded, a nagging dry cough, or ankle swelling, call me — each of those has a usual suspect and we can swap it out."
+            "quote": "If you get dizzy, lightheaded, a nagging dry cough, or ankle swelling, call me"
           },
           "verified": true,
           "supportVerified": true,
@@ -558,6 +541,13 @@
     "Dr. Amado512 Adams676": [
       "c9a5a3e11781"
     ]
+  },
+  "timings": {
+    "comprehend": 8329,
+    "scan": 52,
+    "adjudicate": 40800,
+    "verify": 0,
+    "total": 49181
   },
   "warnings": []
 }

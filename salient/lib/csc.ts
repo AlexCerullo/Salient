@@ -12,7 +12,8 @@ export const cscSchema = z.object({
   severityTier: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   drugs: z.object({
     names: z.array(z.string()).default([]),
-    rxnormCodes: z.array(z.string()).optional()
+    rxnormCodes: z.array(z.string()).optional(),
+    otcAvailable: z.boolean().optional()
   }),
   population: z.object({
     minAgeYears: z.number().optional(),
@@ -20,6 +21,7 @@ export const cscSchema = z.object({
     sex: z.enum(["male", "female"]).optional(),
     pregnancy: z.boolean().optional(),
     minGestationalWeeks: z.number().optional(),
+    monitorFromGestationalWeeks: z.number().optional(),
     requiredConditions: z.array(z.string()).optional(),
     excludedConditions: z.array(z.string()).optional()
   }).default({}),

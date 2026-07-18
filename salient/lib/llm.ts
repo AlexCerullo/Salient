@@ -18,7 +18,8 @@ function extractText(message: any) {
 export async function callClaude(prompt: string, maxTokens = 1600): Promise<LlmResult> {
   const key = crypto.createHash("sha256").update(JSON.stringify({ model: config.model, effort: config.effort, prompt })).digest("hex");
   const file = cachePath(key);
-  if (fs.existsSync(file)) return { text: JSON.parse(fs.readFileSync(file, "utf8")).text, cached: true };
+  const noCache = process.env.SALIENT_NO_CACHE === "1";
+  if (!noCache && fs.existsSync(file)) return { text: JSON.parse(fs.readFileSync(file, "utf8")).text, cached: true };
   if (!config.claudeApiKey) return { text: "", cached: false, warning: "CLAUDE_API_KEY missing; deterministic fallback used" };
   const client = new Anthropic({ apiKey: config.claudeApiKey });
   const base = { model: config.model, max_tokens: maxTokens, messages: [{ role: "user" as const, content: prompt }] };

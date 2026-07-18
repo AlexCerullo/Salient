@@ -1,12 +1,12 @@
 import { describe, expect, it } from "vitest";
 import { cscSchema } from "../lib/csc";
-import { getAlert } from "../lib/alerts";
+import { getCuratedCsc } from "../lib/alerts";
 
 describe("CSC schema", () => {
   it("validates curated alert criteria", () => {
-    expect(cscSchema.parse(getAlert("opioids-pregnancy").csc).alertId).toBe("opioids-pregnancy");
+    expect(cscSchema.parse(getCuratedCsc("opioids-pregnancy")).alertId).toBe("opioids-pregnancy");
   });
   it("rejects invalid severity", () => {
-    expect(() => cscSchema.parse({ ...getAlert("opioids-pregnancy").csc, severityTier: 4 })).toThrow();
+    expect(() => cscSchema.parse({ ...getCuratedCsc("opioids-pregnancy"), severityTier: 4 })).toThrow();
   });
 });

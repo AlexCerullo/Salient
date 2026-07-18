@@ -25,7 +25,7 @@ export type PatientIndex = {
   medications: Evidence[];
   conditions: Evidence[];
   observations: (Evidence & { loinc?: string; value?: number; unit?: string })[];
-  pregnancy: { pregnant: boolean; gestationalWeeks?: number; evidence: Evidence[] };
+  pregnancy: { pregnant: boolean; gestationalWeeks?: number; trimester?: 1 | 2 | 3; gestationSource?: string; evidence: Evidence[] };
   transcript: string;
   note: string;
   raw: any;
@@ -35,6 +35,8 @@ export type ScanCandidate = {
   patient: PatientIndex;
   matchedEvidence: Evidence[];
   reasons: string[];
+  /** exposure = documented drug match; monitor = population at risk (e.g. OTC drug not chartable, or threshold reached later) */
+  matchType: "exposure" | "monitor";
 };
 
 export type ScanExclusion = {
@@ -56,9 +58,12 @@ export type AdjudicatedCase = {
   caseId: string;
   alertId: string;
   patient: Pick<PatientIndex, "sourceIndex" | "patientId" | "encounterId" | "name" | "ageYears" | "sex" | "visitTitle" | "prescriber" | "clinic">;
+  verdict: "actionable" | "monitor" | "dismiss";
   actionable: boolean;
+  matchType: "exposure" | "monitor";
   priority: "high" | "medium" | "low";
   rationale: string;
+  monitorNote?: string;
   claims: { text: string; citation: Citation; verified: boolean; supportVerified?: boolean; dropped?: boolean; reason?: string }[];
   transcriptEscalation?: string;
   draftedAction: string;
@@ -71,8 +76,9 @@ export type PipelineRun = {
   title: string;
   createdAt: string;
   csc: any;
-  funnel: { total: number; scanCandidates: number; actionable: number };
-  scan: Omit<ScanResult, "candidates"> & { candidates: { sourceIndex: number; patientId: string; name: string; reasons: string[]; matchedEvidence: Evidence[] }[] };
+  funnel: { total: number; scanCandidates: number; actionable: number; monitored: number };
+  scan: Omit<ScanResult, "candidates"> & { candidates: { sourceIndex: number; patientId: string; name: string; reasons: string[]; matchedEvidence: Evidence[]; matchType: "exposure" | "monitor" }[] };
+  timings?: Record<string, number>;
   cases: AdjudicatedCase[];
   routed: Record<string, string[]>;
   warnings: string[];

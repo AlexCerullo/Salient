@@ -61,22 +61,77 @@ function observationEvidence(encounter: any) {
   }));
 }
 
-function pregnancyEvidence(conditions: Evidence[], observations: ReturnType<typeof observationEvidence>, visitTitle: string, transcript: string) {
+const NUMBER_WORDS: Record<string, number> = {
+  one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10,
+  eleven: 11, twelve: 12, thirteen: 13, fourteen: 14, fifteen: 15, sixteen: 16, seventeen: 17,
+  eighteen: 18, nineteen: 19, twenty: 20, thirty: 30, forty: 40
+};
+
+function parseWeeksToken(token: string): number | undefined {
+  const n = Number(token);
+  if (Number.isFinite(n) && n > 0) return n;
+  return NUMBER_WORDS[token.toLowerCase()];
+}
+
+/** Extracts gestational age from clinical prose: "nine to ten weeks from her last menstrual period", "10 weeks gestation", "first-trimester". */
+export function extractGestation(text: string): { weeks?: number; trimester?: 1 | 2 | 3; sourceSpan?: string } {
+  const token = "(\\d{1,2}|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty)";
+  const patterns = [
+    // "nine to ten weeks from her last menstrual period" / "ten weeks since my last period"
+    new RegExp(`${token}(?:\\s*(?:to|-|–)\\s*${token})?\\s*weeks?\\s+(?:from|since|by|past)\\s+(?:her |my |the )?(?:last menstrual period|last period|lmp)`, "i"),
+    // "10 weeks gestation" / "nine weeks pregnant" / "ten weeks along"
+    new RegExp(`${token}(?:\\s*(?:to|-|–)\\s*${token})?\\s*weeks?['’]?\\s*(?:of\\s+)?(?:gestation|gestational age|pregnant|along)`, "i"),
+    // "estimates nine to ten weeks"
+    new RegExp(`estimates?\\s+${token}(?:\\s*(?:to|-|–)\\s*${token})?\\s*weeks?`, "i"),
+    // "at 22 weeks' gestation" style with explicit gestational context word before
+    new RegExp(`gestational age (?:of|is|at)?\\s*${token}(?:\\s*(?:to|-|–)\\s*${token})?\\s*weeks?`, "i")
+  ];
+  for (const re of patterns) {
+    const m = text.match(re);
+    if (m) {
+      const a = parseWeeksToken(m[1]);
+      const b = m[2] ? parseWeeksToken(m[2]) : undefined;
+      const weeks = a !== undefined && b !== undefined ? Math.round((a + b) / 2) : a;
+      if (weeks !== undefined) return { weeks, sourceSpan: m[0] };
+    }
+  }
+  const tri = text.match(/(first|second|third)[-\s]trimester/i);
+  if (tri) {
+    const trimester = ({ first: 1, second: 2, third: 3 } as const)[tri[1].toLowerCase() as "first" | "second" | "third"];
+    return { trimester, sourceSpan: tri[0] };
+  }
+  return {};
+}
+
+function pregnancyEvidence(conditions: Evidence[], observations: ReturnType<typeof observationEvidence>, visitTitle: string, transcript: string, note: string) {
   const evidence: Evidence[] = [];
   for (const c of conditions) {
     if (/(pregnancy|prenatal|gestation)/i.test(c.label) && !/past pregnancy history/i.test(c.label)) evidence.push(c);
   }
   if (/(prenatal|pregnancy)/i.test(visitTitle)) evidence.push({ kind: "population", label: visitTitle, normalized: normalizeText(visitTitle) });
   let gestationalWeeks: number | undefined;
+  let trimester: 1 | 2 | 3 | undefined;
+  let gestationSource: string | undefined;
   for (const o of observations) {
     if (/gestational age|weeks gestation/i.test(o.label) && typeof o.value === "number") {
       gestationalWeeks = o.value;
       evidence.push(o);
     }
   }
-  const m = transcript.match(/(\d{1,2})\s*(?:weeks|wks)/i);
-  if (!gestationalWeeks && m) gestationalWeeks = Number(m[1]);
-  return { pregnant: evidence.length > 0 || normalizedIncludes(transcript, "pregnant"), gestationalWeeks, evidence };
+  if (gestationalWeeks === undefined) {
+    // The clinical note states gestational age more reliably than conversation; check it first.
+    for (const text of [note, transcript]) {
+      const g = extractGestation(text);
+      if (g.weeks !== undefined || g.trimester !== undefined) {
+        gestationalWeeks = g.weeks;
+        trimester = g.trimester;
+        gestationSource = g.sourceSpan;
+        break;
+      }
+    }
+  }
+  if (gestationalWeeks !== undefined && trimester === undefined) trimester = gestationalWeeks < 14 ? 1 : gestationalWeeks < 28 ? 2 : 3;
+  return { pregnant: evidence.length > 0 || normalizedIncludes(transcript, "pregnant"), gestationalWeeks, trimester, gestationSource, evidence };
 }
 
 export function buildPatientIndexFromRecords(records: any[]): PatientIndex[] {
@@ -104,7 +159,7 @@ export function buildPatientIndexFromRecords(records: any[]): PatientIndex[] {
       medications,
       conditions,
       observations,
-      pregnancy: pregnancyEvidence(conditions, observations, visitTitle, encounter.transcript || ""),
+      pregnancy: pregnancyEvidence(conditions, observations, visitTitle, encounter.transcript || "", encounter.note || ""),
       transcript: encounter.transcript || "",
       note: encounter.note || "",
       raw: encounter

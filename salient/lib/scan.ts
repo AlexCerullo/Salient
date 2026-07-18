@@ -46,7 +46,7 @@ function pairMatches(patient: PatientIndex, pairs: NonNullable<CSC["interactionP
 export function scanPatients(csc: CSC, patients: PatientIndex[]): ScanResult {
   const candidates: ScanCandidate[] = [];
   const exclusions: ScanResult["exclusions"] = [];
-  const counts = { drugMatched: 0, populationMatched: 0, labMatched: 0, interactionMatched: 0 };
+  const counts: Record<string, number> = { drugMatched: 0, populationMatched: 0, labMatched: 0, interactionMatched: 0, monitorMatched: 0 };
   for (const patient of patients) {
     const reasons: string[] = [];
     const matchedEvidence: Evidence[] = [];
@@ -85,9 +85,29 @@ export function scanPatients(csc: CSC, patients: PatientIndex[]): ScanResult {
       matchedEvidence.push(...pairs.matched);
     }
 
-    const candidate = drugMatched.length > 0 && !populationFailures.length && !lab.failed.length && !pairs.failed.length;
-    if (candidate) {
-      candidates.push({ patient, matchedEvidence, reasons });
+    const exposureCandidate = drugMatched.length > 0 && !populationFailures.length && !lab.failed.length && !pairs.failed.length;
+    // Monitor pathway: the drug is OTC (self-medication invisible to the med list) and the alert
+    // carries a gestational-age threshold. Population-matched pregnant patients are surfaced for
+    // monitoring even without a documented prescription — adjudication decides if action is due now.
+    const monitorEligible = !exposureCandidate &&
+      !drugMatched.length &&
+      csc.drugs.otcAvailable === true &&
+      typeof csc.population.monitorFromGestationalWeeks === "number" &&
+      csc.population.pregnancy === true &&
+      patient.pregnancy.pregnant &&
+      !populationFailures.length &&
+      !lab.failed.length && !pairs.failed.length;
+    if (exposureCandidate) {
+      candidates.push({ patient, matchedEvidence, reasons, matchType: "exposure" });
+    } else if (monitorEligible) {
+      counts.monitorMatched = (counts.monitorMatched || 0) + 1;
+      const t = csc.population.monitorFromGestationalWeeks!;
+      const gw = patient.pregnancy.gestationalWeeks;
+      const gestationLabel = gw !== undefined ? `~${gw} weeks` : patient.pregnancy.trimester ? `trimester ${patient.pregnancy.trimester}` : "gestational age not yet documented";
+      const timing = gw !== undefined && gw >= t ? `at/after the ${t}-week threshold — exposure check due NOW` : `below the ${t}-week threshold — becomes applicable at ${t} weeks`;
+      reasons.push(`matched population: pregnant (${gestationLabel}), ${timing}`);
+      reasons.push(`no documented prescription, but ${csc.drugs.names.slice(0, 3).join("/")} are available OTC — chart absence does not rule out use`);
+      candidates.push({ patient, matchedEvidence, reasons, matchType: "monitor" });
     } else {
       const nearMiss = drugMatched.length && populationFailures.includes("not pregnant") ? `on ${drugMatched[0].label} but not pregnant` : drugMatched.length ? `drug matched but ${[...populationFailures, ...lab.failed, ...pairs.failed].join("; ")}` : undefined;
       exclusions.push({

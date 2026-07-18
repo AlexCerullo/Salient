@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { config } from "../lib/config";
-import { listAlerts } from "../lib/alerts";
+import { listAlerts, getCuratedCsc } from "../lib/alerts";
 import { loadPatientIndex } from "../lib/patient-index";
 import { scanPatients } from "../lib/scan";
 import { adjudicateCandidate } from "../lib/adjudicate";
@@ -13,11 +13,11 @@ const labels: Record<string, string[]> = {};
 const perAlert: any[] = [];
 
 for (const alert of alerts) {
-  const scan = scanPatients(alert.csc, patients);
+  const scan = scanPatients(getCuratedCsc(alert.id), patients);
   labels[alert.id] = scan.candidates.map((c) => c.patient.recordId);
   const sample = scan.candidates.slice(0, 12);
   const cases = [];
-  for (const candidate of sample) cases.push((await adjudicateCandidate(alert.id, alert.csc, candidate)).case);
+  for (const candidate of sample) cases.push((await adjudicateCandidate(alert.id, getCuratedCsc(alert.id), candidate)).case);
   const predicted = new Set(scan.candidates.map((c) => c.patient.recordId));
   const truth = new Set(labels[alert.id]);
   const tp = [...predicted].filter((id) => truth.has(id)).length;
