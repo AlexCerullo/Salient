@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import { PatientIndex, Evidence } from "./types";
-import { canonicalDrugTerms, normalizeText, normalizedIncludes } from "./normalize";
+import { canonicalDrugTerms, normalizeText } from "./normalize";
 
 function displayName(patient: any) {
   const n = patient?.name?.[0];
@@ -103,8 +103,16 @@ export function extractGestation(text: string): { weeks?: number; trimester?: 1 
   return {};
 }
 
+// Conditions/visits that mention pregnancy but mean the patient is NOT currently pregnant.
+const PREGNANCY_NEGATION = /postpartum|post-partum|pregnancy loss|miscarriage|ectopic|abortion|termination of pregnancy/i;
+
 function pregnancyEvidence(conditions: Evidence[], observations: ReturnType<typeof observationEvidence>, visitTitle: string, transcript: string, note: string) {
   const evidence: Evidence[] = [];
+  // Postpartum or pregnancy-loss encounters are not current pregnancies, even when a
+  // historical "Normal pregnancy" condition remains on the problem list.
+  const isHistorical = (label: string) => /\b(past|history of|prior|previous)\b/i.test(label);
+  const negated = PREGNANCY_NEGATION.test(visitTitle) || conditions.some((c) => PREGNANCY_NEGATION.test(c.label) && !isHistorical(c.label));
+  if (negated) return { pregnant: false, gestationalWeeks: undefined, trimester: undefined, gestationSource: undefined, evidence };
   for (const c of conditions) {
     if (/(pregnancy|prenatal|gestation)/i.test(c.label) && !/past pregnancy history/i.test(c.label)) evidence.push(c);
   }
@@ -131,7 +139,9 @@ function pregnancyEvidence(conditions: Evidence[], observations: ReturnType<type
     }
   }
   if (gestationalWeeks !== undefined && trimester === undefined) trimester = gestationalWeeks < 14 ? 1 : gestationalWeeks < 28 ? 2 : 3;
-  return { pregnant: evidence.length > 0 || normalizedIncludes(transcript, "pregnant"), gestationalWeeks, trimester, gestationSource, evidence };
+  // Pregnancy requires structured or visit-level evidence; a stray "pregnant" in
+  // conversation (contraception counseling, negative tests) is not enough.
+  return { pregnant: evidence.length > 0, gestationalWeeks, trimester, gestationSource, evidence };
 }
 
 export function buildPatientIndexFromRecords(records: any[]): PatientIndex[] {

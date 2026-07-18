@@ -65,6 +65,8 @@ export type AdjudicatedCase = {
   rationale: string;
   monitorNote?: string;
   claims: { text: string; citation: Citation; verified: boolean; supportVerified?: boolean; dropped?: boolean; reason?: string }[];
+  /** proposed = claims the LLM emitted; verified = claims surviving mechanical citation verification */
+  claimAudit: { proposed: number; verified: number };
   transcriptEscalation?: string;
   draftedAction: string;
   matchedEvidence: Evidence[];

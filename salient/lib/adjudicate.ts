@@ -53,7 +53,8 @@ function fallbackCase(alertId: string, csc: CSC, candidate: ScanCandidate): Adju
       .replaceAll("{prescriber}", p.prescriber),
     matchedEvidence: candidate.matchedEvidence,
     routeTo: p.prescriber,
-    claims
+    claims,
+    claimAudit: { proposed: claims.length, verified: claims.length }
   };
 }
 
@@ -153,7 +154,8 @@ export async function adjudicateCandidate(alertId: string, csc: CSC, candidate: 
     monitorNote: parsed?.monitorNote || (verdict === "monitor" ? base.monitorNote : undefined),
     transcriptEscalation: typeof parsed?.transcriptEscalation === "string" && parsed.transcriptEscalation.trim() ? parsed.transcriptEscalation : undefined,
     draftedAction: parsed?.draftedAction || base.draftedAction,
-    claims: verifiedClaims
+    claims: verifiedClaims,
+    claimAudit: { proposed: allClaims.length, verified: verifiedClaims.length }
   };
   return { case: adjudicated, warnings };
 }
