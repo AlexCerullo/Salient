@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/ai-synthetic-ambient-fhir-encounter-v1.json",
+  "title": "AI Synthetic Ambient FHIR Encounter",
+  "type": "object",
+  "required": [
+    "id",
+    "metadata",
+    "patient_context",
+    "encounter_fhir",
+    "transcript",
+    "note",
+    "after_visit_summary",
+    "after_visit_summary_provenance"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[^:]+::[^:]+$" },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "source",
+        "synthetic",
+        "patient_id",
+        "encounter_id",
+        "encounter_reference",
+        "date",
+        "status",
+        "visit_type",
+        "document_status",
+        "related_resource_counts",
+        "visit_title"
+      ],
+      "properties": {
+        "source": { "type": "string" },
+        "synthetic": { "const": true },
+        "patient_id": { "type": "string" },
+        "encounter_id": { "type": "string" },
+        "encounter_reference": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "status": { "type": "string" },
+        "visit_type": { "type": "string" },
+        "document_status": { "type": "string" },
+        "related_resource_counts": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        },
+        "visit_title": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "patient_context": {
+      "type": "object",
+      "required": ["patient", "longitudinal_summary"],
+      "properties": {
+        "patient": { "type": "object" },
+        "longitudinal_summary": {
+          "type": "object",
+          "required": ["resource_counts", "condition_labels", "medication_labels"],
+          "properties": {
+            "resource_counts": {
+              "type": "object",
+              "additionalProperties": { "type": "integer", "minimum": 0 }
+            },
+            "condition_labels": { "type": "array", "items": { "type": "string" } },
+            "medication_labels": { "type": "array", "items": { "type": "string" } }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "encounter_fhir": {
+      "type": "object",
+      "required": ["encounter", "related_resources"],
+      "properties": {
+        "encounter": { "type": "object" },
+        "related_resources": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "object" }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "transcript": { "type": "string", "minLength": 1 },
+    "note": { "type": "string", "minLength": 1 },
+    "after_visit_summary": { "type": "string", "minLength": 1 },
+    "after_visit_summary_provenance": {
+      "type": "object",
+      "required": ["method", "source", "review_status"],
+      "properties": {
+        "method": { "const": "deterministic_extractive_v1" },
+        "source": { "const": "clinical_note_assessment_and_plan" },
+        "review_status": { "const": "not_clinically_reviewed" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
