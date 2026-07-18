@@ -1,0 +1,19 @@
+{
+  "id": "hctz-skin-cancer",
+  "title": "Hydrochlorothiazide and non-melanoma skin cancer",
+  "url": "https://www.fda.gov/safety/medical-product-safety-information/hydrochlorothiazide-drug-safety-communication-labeling-changes",
+  "datePublished": "2020-08-20",
+  "kind": "label_change",
+  "excerpt": "FDA approved label changes to hydrochlorothiazide to describe a small increased risk of non-melanoma skin cancer, particularly squamous cell carcinoma, and to encourage patients to protect skin from sun exposure and undergo regular skin cancer screenings.",
+  "csc": {
+    "id": "csc-hctz-skin-cancer",
+    "alertId": "hctz-skin-cancer",
+    "title": "Hydrochlorothiazide skin-cancer counseling",
+    "source": { "kind": "label_change", "url": "https://www.fda.gov/safety/medical-product-safety-information/hydrochlorothiazide-drug-safety-communication-labeling-changes", "datePublished": "2020-08-20" },
+    "severityTier": 2,
+    "drugs": { "names": ["hydrochlorothiazide", "hctz"] },
+    "population": {},
+    "recommendedActionTemplate": "For {patient}, counsel on sun protection while taking {medications}, recommend routine skin examination, and document shared decision-making with {prescriber}.",
+    "rationale": "Hydrochlorothiazide labeling describes increased non-melanoma skin cancer risk and recommends sun protection and regular skin checks."
+  }
+}

@@ -1,0 +1,563 @@
+{
+  "alertId": "hctz-skin-cancer",
+  "title": "Hydrochlorothiazide and non-melanoma skin cancer",
+  "createdAt": "2026-07-18T23:00:59.850Z",
+  "csc": {
+    "id": "csc-hctz-skin-cancer",
+    "alertId": "hctz-skin-cancer",
+    "title": "Hydrochlorothiazide skin-cancer counseling",
+    "source": {
+      "kind": "label_change",
+      "url": "https://www.fda.gov/safety/medical-product-safety-information/hydrochlorothiazide-drug-safety-communication-labeling-changes",
+      "datePublished": "2020-08-20"
+    },
+    "severityTier": 2,
+    "drugs": {
+      "names": [
+        "hydrochlorothiazide",
+        "hctz"
+      ],
+      "rxnormCodes": [
+        "5487"
+      ]
+    },
+    "population": {},
+    "requiredMonitoring": [
+      "regular skin cancer screening / routine skin examination"
+    ],
+    "recommendedActionTemplate": "For {patient}, counsel on sun protection while taking {medications}, recommend routine skin examination, and document shared decision-making with {prescriber}.",
+    "rationale": "Hydrochlorothiazide labeling describes increased non-melanoma skin cancer risk and recommends sun protection and regular skin checks."
+  },
+  "funnel": {
+    "total": 25,
+    "scanCandidates": 3,
+    "actionable": 3
+  },
+  "scan": {
+    "total": 25,
+    "counts": {
+      "drugMatched": 3,
+      "populationMatched": 25,
+      "labMatched": 25,
+      "interactionMatched": 25
+    },
+    "candidates": [
+      {
+        "sourceIndex": 6,
+        "patientId": "4b4735a2-ee12-ec86-041f-3ba4d5c81ec9",
+        "name": "Mr. Elias Wisozk",
+        "reasons": [
+          "matched drug: Hydrochlorothiazide 25 MG Oral Tablet"
+        ],
+        "matchedEvidence": [
+          {
+            "kind": "medication",
+            "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+            "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide"
+          },
+          {
+            "kind": "medication",
+            "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+            "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide",
+            "resourceType": "MedicationRequest",
+            "resourceId": "4b4735a2-ee12-ec86-d642-408f094ead4a"
+          },
+          {
+            "kind": "medication",
+            "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+            "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide",
+            "resourceType": "MedicationRequest",
+            "resourceId": "4b4735a2-ee12-ec86-2f73-08977934c44b"
+          }
+        ]
+      },
+      {
+        "sourceIndex": 10,
+        "patientId": "74919836-2db2-2f73-d2cf-5287a180b0ff",
+        "name": "Mr. Isreal Delbert Howell",
+        "reasons": [
+          "matched drug: Hydrochlorothiazide 25 MG Oral Tablet"
+        ],
+        "matchedEvidence": [
+          {
+            "kind": "medication",
+            "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+            "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide"
+          },
+          {
+            "kind": "medication",
+            "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+            "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide",
+            "resourceType": "MedicationRequest",
+            "resourceId": "74919836-2db2-2f73-7dad-412e5b4e0a70"
+          }
+        ]
+      },
+      {
+        "sourceIndex": 12,
+        "patientId": "6d4fd363-1ddb-74f8-516f-2fdc861cb736",
+        "name": "Mr. Julius Alphonso Renner",
+        "reasons": [
+          "matched drug: Hydrochlorothiazide 25 MG Oral Tablet"
+        ],
+        "matchedEvidence": [
+          {
+            "kind": "medication",
+            "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+            "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide"
+          },
+          {
+            "kind": "medication",
+            "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+            "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide",
+            "resourceType": "MedicationRequest",
+            "resourceId": "6d4fd363-1ddb-74f8-f443-78d0bc59244d"
+          }
+        ]
+      }
+    ],
+    "exclusions": [
+      {
+        "sourceIndex": 0,
+        "patientId": "3a3a1f26-ed23-f65c-a7df-c96fac56f464",
+        "name": "Mr. Ali Jerry Kuhic",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 1,
+        "patientId": "7bd9e5b0-5d4b-f10d-9579-f4813faf9cdc",
+        "name": "Mrs. Ariane Jan Runolfsson",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 2,
+        "patientId": "b342f27e-56bc-08ac-347c-323279c0d595",
+        "name": "Mrs. Clarence Reinger",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 3,
+        "patientId": "6b716621-5454-68ec-2017-362939ab6f36",
+        "name": "Mrs. Corinne Charlesetta Crooks",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 4,
+        "patientId": "966e9818-9cf6-8d71-74bc-36aef6643618",
+        "name": "Ms. Delana Jamie Gutkowski",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 5,
+        "patientId": "374e68b2-ee15-0852-cd48-3c7b6fd8e114",
+        "name": "Mr. Dick Larson",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 7,
+        "patientId": "1ba8eeb9-bc93-7129-4390-0d2ddd560616",
+        "name": "Mr. Emory Britt Kovacek",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 8,
+        "patientId": "73043f9e-3254-a1d3-aa45-b82f0fc6d502",
+        "name": "Ms. Eva Julia Casas",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 9,
+        "patientId": "40cb7be2-9c26-6328-3aa0-71db4ed81e06",
+        "name": "Ms. Hiedi Moira Thiel",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 11,
+        "patientId": "be1b73f7-b0f0-0ca3-b24b-28369ce68943",
+        "name": "Mr. Issac Daniel Mayer",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 13,
+        "patientId": "256bea3d-7833-e7f8-74b4-0e4f7e299c73",
+        "name": "Mrs. Lala Kazuko Casper",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 14,
+        "patientId": "4c893b3e-df6f-a2f0-5d03-98714cbad61a",
+        "name": "Mr. Lamont Boyce Ernser",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 15,
+        "patientId": "1be66dc9-cf0b-cb78-e88e-ada9a9a5405b",
+        "name": "Ms. Latoyia Willene Wilkinson",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 16,
+        "patientId": "c2cbc55e-34dc-73c6-5ee4-cabe0c40fc32",
+        "name": "Mrs. Margarita Kaylene Rau",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 17,
+        "patientId": "e1a7c2af-1e7f-300b-44f6-012ae75bbab1",
+        "name": "Mr. Marty Rodrick Toy",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 18,
+        "patientId": "a3292ec4-64b6-20fc-480e-39e1f7f51e50",
+        "name": "Ms. Melodee Bobette Satterfield",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 19,
+        "patientId": "b504cdf2-e13b-979e-9c4a-95456823e3dd",
+        "name": "Mrs. Monica Harriett Hilpert",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 20,
+        "patientId": "d57244c4-df7d-9ce7-7878-38361fc0087b",
+        "name": "Mr. Nigel Giovanni Ankunding",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 21,
+        "patientId": "25fb1227-d194-b15e-e099-7cffcd6081ec",
+        "name": "Mrs. Nola Robert Kling",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 22,
+        "patientId": "693a049b-0fd5-c1af-a6ab-e31c329f2891",
+        "name": "Mr. Solomon Maria Macejkovic",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 23,
+        "patientId": "5e93dd7e-1639-0886-8d0e-80ac11f2785c",
+        "name": "Ms. Traci Saran Wiegand",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 24,
+        "patientId": "01573895-dbf5-29c6-4ef9-cd09aecc51f6",
+        "name": "Mr. Van Loren O'Reilly",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "caseId": "6d7c8a5aabfc",
+      "alertId": "hctz-skin-cancer",
+      "patient": {
+        "sourceIndex": 6,
+        "patientId": "4b4735a2-ee12-ec86-041f-3ba4d5c81ec9",
+        "encounterId": "4b4735a2-ee12-ec86-c1c9-c610cc6ef8ab",
+        "name": "Mr. Elias Wisozk",
+        "ageYears": 54,
+        "sex": "male",
+        "visitTitle": "General adult exam — new hypertension and metabolic syndrome",
+        "prescriber": "Dr. Benita195 VonRueden376",
+        "clinic": "GREATER LAWRENCE FAMILY HEALTH CENTER INC"
+      },
+      "actionable": true,
+      "priority": "medium",
+      "rationale": "Mr. Wisozk was newly started on hydrochlorothiazide 25 mg daily for essential hypertension. Per the 2020 FDA labeling change, hydrochlorothiazide carries an increased risk of non-melanoma skin cancer, and patients should receive sun-protection counseling and routine skin examinations. Neither the visit note nor the transcript documents any sun-protection or skin-cancer counseling — the clinician counseled only on diuresis, orthostatic symptoms, cramping, and electrolytes. This is a genuine counseling gap for a patient beginning long-term thiazide therapy, but it is not urgent (no reported skin lesions or heightened risk factors documented), so medium priority is appropriate.",
+      "draftedAction": "For Mr. Elias Wisozk, counsel on sun protection (protective clothing, broad-spectrum sunscreen, limiting UV exposure) while taking hydrochlorothiazide 25 mg daily, recommend routine skin examination given the FDA-labeled increased risk of non-melanoma skin cancer with hydrochlorothiazide, and document shared decision-making with Dr. Okafor. This counseling can be added at the already-scheduled 1-month blood pressure recheck.",
+      "matchedEvidence": [
+        {
+          "kind": "medication",
+          "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+          "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide"
+        },
+        {
+          "kind": "medication",
+          "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+          "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide",
+          "resourceType": "MedicationRequest",
+          "resourceId": "4b4735a2-ee12-ec86-d642-408f094ead4a"
+        },
+        {
+          "kind": "medication",
+          "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+          "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide",
+          "resourceType": "MedicationRequest",
+          "resourceId": "4b4735a2-ee12-ec86-2f73-08977934c44b"
+        }
+      ],
+      "routeTo": "Dr. Benita195 VonRueden376",
+      "claims": [
+        {
+          "text": "Patient has an active order for Hydrochlorothiazide 25 MG Oral Tablet.",
+          "citation": {
+            "type": "fhir",
+            "resourceType": "MedicationRequest",
+            "resourceId": "4b4735a2-ee12-ec86-d642-408f094ead4a"
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "A second hydrochlorothiazide 25 MG oral tablet order is also documented for this patient.",
+          "citation": {
+            "type": "fhir",
+            "resourceType": "MedicationRequest",
+            "resourceId": "4b4735a2-ee12-ec86-2f73-08977934c44b"
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "Hydrochlorothiazide was newly initiated at this visit for essential hypertension.",
+          "citation": {
+            "type": "transcript",
+            "quote": "First, a medication: hydrochlorothiazide, 25 milligrams, one tablet every morning. It's a water pill — it lowers pressure by helping you offload salt and fluid."
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "The essential hypertension diagnosis driving the new hydrochlorothiazide prescription is documented.",
+          "citation": {
+            "type": "fhir",
+            "resourceType": "Condition",
+            "resourceId": "4b4735a2-ee12-ec86-43f9-72c6a9c11cad"
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "Counseling at initiation covered orthostasis, cramps, and electrolytes, but no sun-protection or skin-cancer counseling was provided.",
+          "citation": {
+            "type": "transcript",
+            "quote": "If you feel lightheaded when you stand, or you get muscle cramps, call us — it can nudge your potassium and sodium, so we'll recheck bloodwork after you've been on it a while."
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        }
+      ]
+    },
+    {
+      "caseId": "0a88a17618b4",
+      "alertId": "hctz-skin-cancer",
+      "patient": {
+        "sourceIndex": 10,
+        "patientId": "74919836-2db2-2f73-d2cf-5287a180b0ff",
+        "encounterId": "74919836-2db2-2f73-ed42-440eccc6591a",
+        "name": "Mr. Isreal Delbert Howell",
+        "ageYears": 85,
+        "sex": "male",
+        "visitTitle": "Annual physical — geriatric cardiometabolic follow-up",
+        "prescriber": "Dr. Florance664 Leannon79",
+        "clinic": "SUNRISE HEALTHCARE LLC"
+      },
+      "actionable": true,
+      "priority": "medium",
+      "rationale": "Mr. Howell was newly started on hydrochlorothiazide 25 mg daily at this visit. FDA labeling changes (2020-08-20) describe increased non-melanoma skin cancer risk with hydrochlorothiazide and recommend sun protection counseling and regular skin examinations. This is especially relevant here: he is an 85-year-old man who reports frequent outdoor activity (daily walks and regular gardening), increasing cumulative sun exposure. Neither the transcript nor the visit note documents any skin-cancer risk counseling, sun-protection advice, or plan for routine skin examination, so the required monitoring is missing.",
+      "draftedAction": "For Mr. Isreal Delbert Howell, counsel on sun protection (broad-spectrum sunscreen, protective clothing/hat, limiting midday sun during morning walks and gardening) while taking Hydrochlorothiazide 25 MG Oral Tablet, recommend routine skin examination with periodic full-body skin checks given the FDA-labeled increased non-melanoma skin cancer risk, and document shared decision-making with the prescribing physician. Add skin-cancer surveillance to the 6-month follow-up plan.",
+      "matchedEvidence": [
+        {
+          "kind": "medication",
+          "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+          "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide"
+        },
+        {
+          "kind": "medication",
+          "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+          "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide",
+          "resourceType": "MedicationRequest",
+          "resourceId": "74919836-2db2-2f73-7dad-412e5b4e0a70"
+        }
+      ],
+      "routeTo": "Dr. Florance664 Leannon79",
+      "claims": [
+        {
+          "text": "The patient has an active prescription for hydrochlorothiazide 25 mg oral tablet.",
+          "citation": {
+            "type": "fhir",
+            "resourceType": "MedicationRequest",
+            "resourceId": "74919836-2db2-2f73-7dad-412e5b4e0a70"
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "Hydrochlorothiazide was newly initiated at this visit for blood pressure management.",
+          "citation": {
+            "type": "transcript",
+            "quote": "I want to add hydrochlorothiazide, twenty-five milligrams each morning — a mild water pill."
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "The patient has substantial regular outdoor sun exposure through daily walking and gardening.",
+          "citation": {
+            "type": "transcript",
+            "quote": "I still do my walk around the block most mornings."
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "Gardening is a frequent activity, further increasing sun exposure while on hydrochlorothiazide.",
+          "citation": {
+            "type": "transcript",
+            "quote": "The garden, mostly. And my daughter and grandson live with me, so there is always some commotion in the house."
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "Counseling at initiation covered urination timing and dizziness but did not include skin-cancer risk, sun protection, or skin examination.",
+          "citation": {
+            "type": "transcript",
+            "quote": "Take it in the morning and you will mostly be running before lunch. If you feel dizzy or washed out, especially when you stand up, I want to hear about it right away."
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        }
+      ]
+    },
+    {
+      "caseId": "c9a5a3e11781",
+      "alertId": "hctz-skin-cancer",
+      "patient": {
+        "sourceIndex": 12,
+        "patientId": "6d4fd363-1ddb-74f8-516f-2fdc861cb736",
+        "encounterId": "6d4fd363-1ddb-74f8-95dd-b53404f1e107",
+        "name": "Mr. Julius Alphonso Renner",
+        "ageYears": 35,
+        "sex": "male",
+        "visitTitle": "General exam — hypertension treatment initiation and chronic low back pain",
+        "prescriber": "Dr. Amado512 Adams676",
+        "clinic": "BL HEALTHCARE INC DELEWARE"
+      },
+      "actionable": true,
+      "priority": "low",
+      "rationale": "Mr. Renner was newly started on hydrochlorothiazide 25 mg daily at this visit. Per the 2020 FDA labeling change, HCTZ carries an increased risk of non-melanoma skin cancer, and patients should be counseled on sun protection and routine skin examination. The transcript shows counseling covered dizziness, cough, and ankle swelling, but no sun-protection or skin-cancer screening counseling was provided or documented. This is a counseling/monitoring gap for a newly initiated therapy rather than an acute safety issue, so priority is low, but action is warranted.",
+      "transcriptEscalation": "No sun-protection or skin-examination counseling was documented during the visit despite new HCTZ initiation; recommend adding this counseling at or before the planned 4-6 week follow-up.",
+      "draftedAction": "For Mr. Julius Renner, counsel on sun protection (sunscreen, protective clothing, limiting UV exposure) while taking hydrochlorothiazide 25 mg daily, recommend routine skin examination for non-melanoma skin cancer, and document shared decision-making with the prescribing physician at the upcoming 4-6 week hypertension follow-up visit.",
+      "matchedEvidence": [
+        {
+          "kind": "medication",
+          "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+          "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide"
+        },
+        {
+          "kind": "medication",
+          "label": "Hydrochlorothiazide 25 MG Oral Tablet",
+          "normalized": "hydrochlorothiazide 25 mg oral tablet|hydrochlorothiazide",
+          "resourceType": "MedicationRequest",
+          "resourceId": "6d4fd363-1ddb-74f8-f443-78d0bc59244d"
+        }
+      ],
+      "routeTo": "Dr. Amado512 Adams676",
+      "claims": [
+        {
+          "text": "Patient has an active order for Hydrochlorothiazide 25 MG Oral Tablet.",
+          "citation": {
+            "type": "fhir",
+            "resourceType": "MedicationRequest",
+            "resourceId": "6d4fd363-1ddb-74f8-f443-78d0bc59244d"
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "The prescriber initiated HCTZ at this visit as part of a new antihypertensive regimen.",
+          "citation": {
+            "type": "transcript",
+            "quote": "lisinopril ten milligrams once a day, amlodipine two and a half milligrams once a day, and hydrochlorothiazide twenty-five milligrams in the morning — that last one is a water pill."
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "Side-effect counseling addressed dizziness, cough, and ankle swelling but did not include sun protection or skin-cancer screening.",
+          "citation": {
+            "type": "transcript",
+            "quote": "If you get dizzy, lightheaded, a nagging dry cough, or ankle swelling, call me — each of those has a usual suspect and we can swap it out."
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        }
+      ]
+    }
+  ],
+  "routed": {
+    "Dr. Benita195 VonRueden376": [
+      "6d7c8a5aabfc"
+    ],
+    "Dr. Florance664 Leannon79": [
+      "0a88a17618b4"
+    ],
+    "Dr. Amado512 Adams676": [
+      "c9a5a3e11781"
+    ]
+  },
+  "warnings": []
+}

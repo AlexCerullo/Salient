@@ -1,0 +1,19 @@
+{
+  "id": "opioids-pregnancy",
+  "title": "Opioid use in pregnancy and neonatal opioid withdrawal syndrome",
+  "url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-requires-labeling-changes-opioid-pain-medicines",
+  "datePublished": "2016-09-15",
+  "kind": "boxed_warning",
+  "excerpt": "FDA labeling for opioid analgesics warns that prolonged use of opioids during pregnancy can result in neonatal opioid withdrawal syndrome, which may be life-threatening if not recognized and treated. Clinicians should advise pregnant patients of risk and ensure appropriate obstetric and pain-management follow-up.",
+  "csc": {
+    "id": "csc-opioids-pregnancy",
+    "alertId": "opioids-pregnancy",
+    "title": "Opioids in pregnancy",
+    "source": { "kind": "boxed_warning", "url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-requires-labeling-changes-opioid-pain-medicines", "datePublished": "2016-09-15" },
+    "severityTier": 1,
+    "drugs": { "names": ["hydrocodone", "tramadol", "meperidine", "opioid", "oxycodone", "codeine", "morphine"] },
+    "population": { "sex": "female", "pregnancy": true },
+    "recommendedActionTemplate": "Review {patient}'s opioid exposure ({medications}) during pregnancy. Counsel on neonatal opioid withdrawal risk, avoid abrupt discontinuation, and coordinate obstetric and pain-management follow-up with {prescriber}.",
+    "rationale": "Opioid exposure during pregnancy can cause neonatal opioid withdrawal syndrome and requires clinician review."
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "alertId": "nsaids-pregnancy-20wk",
+  "title": "NSAIDs at 20 weeks or later in pregnancy",
+  "createdAt": "2026-07-18T23:00:10.726Z",
+  "csc": {
+    "id": "csc-nsaids-pregnancy-20wk",
+    "alertId": "nsaids-pregnancy-20wk",
+    "title": "NSAIDs in pregnancy at 20 weeks or later",
+    "source": {
+      "kind": "safety_communication",
+      "url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-recommends-avoiding-use-nsaids-pregnancy-20-weeks-or-later",
+      "datePublished": "2020-10-15"
+    },
+    "severityTier": 1,
+    "drugs": {
+      "names": [
+        "naproxen",
+        "ibuprofen",
+        "nsaid",
+        "aleve",
+        "advil",
+        "motrin"
+      ]
+    },
+    "population": {
+      "sex": "female",
+      "pregnancy": true,
+      "minGestationalWeeks": 20
+    },
+    "requiredMonitoring": [
+      "amniotic fluid monitoring if NSAID treatment extends beyond 48 hours"
+    ],
+    "recommendedActionTemplate": "Review {patient}'s NSAID exposure ({medications}) in pregnancy. Stop or substitute when clinically appropriate and consider amniotic-fluid monitoring if use is necessary.",
+    "rationale": "NSAID use at or after 20 weeks gestation can cause fetal renal dysfunction and oligohydramnios."
+  },
+  "funnel": {
+    "total": 25,
+    "scanCandidates": 0,
+    "actionable": 0
+  },
+  "scan": {
+    "total": 25,
+    "counts": {
+      "drugMatched": 4,
+      "populationMatched": 0,
+      "labMatched": 25,
+      "interactionMatched": 25
+    },
+    "candidates": [],
+    "exclusions": [
+      {
+        "sourceIndex": 0,
+        "patientId": "3a3a1f26-ed23-f65c-a7df-c96fac56f464",
+        "name": "Mr. Ali Jerry Kuhic",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 1,
+        "patientId": "7bd9e5b0-5d4b-f10d-9579-f4813faf9cdc",
+        "name": "Mrs. Ariane Jan Runolfsson",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 2,
+        "patientId": "b342f27e-56bc-08ac-347c-323279c0d595",
+        "name": "Mrs. Clarence Reinger",
+        "reasons": [
+          "no matching drug exposure",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 3,
+        "patientId": "6b716621-5454-68ec-2017-362939ab6f36",
+        "name": "Mrs. Corinne Charlesetta Crooks",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 4,
+        "patientId": "966e9818-9cf6-8d71-74bc-36aef6643618",
+        "name": "Ms. Delana Jamie Gutkowski",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 5,
+        "patientId": "374e68b2-ee15-0852-cd48-3c7b6fd8e114",
+        "name": "Mr. Dick Larson",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 6,
+        "patientId": "4b4735a2-ee12-ec86-041f-3ba4d5c81ec9",
+        "name": "Mr. Elias Wisozk",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 7,
+        "patientId": "1ba8eeb9-bc93-7129-4390-0d2ddd560616",
+        "name": "Mr. Emory Britt Kovacek",
+        "reasons": [
+          "matched drug: Ibuprofen 400 MG Oral Tablet [Ibu]",
+          "sex is male, not female",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ],
+        "nearMiss": "on Ibuprofen 400 MG Oral Tablet [Ibu] but not pregnant"
+      },
+      {
+        "sourceIndex": 8,
+        "patientId": "73043f9e-3254-a1d3-aa45-b82f0fc6d502",
+        "name": "Ms. Eva Julia Casas",
+        "reasons": [
+          "matched drug: Naproxen sodium 220 MG Oral Tablet",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ],
+        "nearMiss": "on Naproxen sodium 220 MG Oral Tablet but not pregnant"
+      },
+      {
+        "sourceIndex": 9,
+        "patientId": "40cb7be2-9c26-6328-3aa0-71db4ed81e06",
+        "name": "Ms. Hiedi Moira Thiel",
+        "reasons": [
+          "no matching drug exposure",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 10,
+        "patientId": "74919836-2db2-2f73-d2cf-5287a180b0ff",
+        "name": "Mr. Isreal Delbert Howell",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 11,
+        "patientId": "be1b73f7-b0f0-0ca3-b24b-28369ce68943",
+        "name": "Mr. Issac Daniel Mayer",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 12,
+        "patientId": "6d4fd363-1ddb-74f8-516f-2fdc861cb736",
+        "name": "Mr. Julius Alphonso Renner",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 13,
+        "patientId": "256bea3d-7833-e7f8-74b4-0e4f7e299c73",
+        "name": "Mrs. Lala Kazuko Casper",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 14,
+        "patientId": "4c893b3e-df6f-a2f0-5d03-98714cbad61a",
+        "name": "Mr. Lamont Boyce Ernser",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 15,
+        "patientId": "1be66dc9-cf0b-cb78-e88e-ada9a9a5405b",
+        "name": "Ms. Latoyia Willene Wilkinson",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 16,
+        "patientId": "c2cbc55e-34dc-73c6-5ee4-cabe0c40fc32",
+        "name": "Mrs. Margarita Kaylene Rau",
+        "reasons": [
+          "no matching drug exposure",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 17,
+        "patientId": "e1a7c2af-1e7f-300b-44f6-012ae75bbab1",
+        "name": "Mr. Marty Rodrick Toy",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 18,
+        "patientId": "a3292ec4-64b6-20fc-480e-39e1f7f51e50",
+        "name": "Ms. Melodee Bobette Satterfield",
+        "reasons": [
+          "no matching drug exposure",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 19,
+        "patientId": "b504cdf2-e13b-979e-9c4a-95456823e3dd",
+        "name": "Mrs. Monica Harriett Hilpert",
+        "reasons": [
+          "matched drug: Naproxen sodium 220 MG Oral Tablet",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ],
+        "nearMiss": "on Naproxen sodium 220 MG Oral Tablet but not pregnant"
+      },
+      {
+        "sourceIndex": 20,
+        "patientId": "d57244c4-df7d-9ce7-7878-38361fc0087b",
+        "name": "Mr. Nigel Giovanni Ankunding",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 21,
+        "patientId": "25fb1227-d194-b15e-e099-7cffcd6081ec",
+        "name": "Mrs. Nola Robert Kling",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 22,
+        "patientId": "693a049b-0fd5-c1af-a6ab-e31c329f2891",
+        "name": "Mr. Solomon Maria Macejkovic",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 23,
+        "patientId": "5e93dd7e-1639-0886-8d0e-80ac11f2785c",
+        "name": "Ms. Traci Saran Wiegand",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ]
+      },
+      {
+        "sourceIndex": 24,
+        "patientId": "01573895-dbf5-29c6-4ef9-cd09aecc51f6",
+        "name": "Mr. Van Loren O'Reilly",
+        "reasons": [
+          "matched drug: Naproxen sodium 220 MG Oral Tablet",
+          "sex is male, not female",
+          "not pregnant",
+          "gestational age unknown below 20 weeks"
+        ],
+        "nearMiss": "on Naproxen sodium 220 MG Oral Tablet but not pregnant"
+      }
+    ]
+  },
+  "cases": [],
+  "routed": {},
+  "warnings": []
+}
