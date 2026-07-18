@@ -1,7 +1,7 @@
 {
   "alertId": "opioids-pregnancy",
   "title": "Opioid use in pregnancy and neonatal opioid withdrawal syndrome",
-  "createdAt": "2026-07-18T23:48:31.369Z",
+  "createdAt": "2026-07-18T23:51:56.772Z",
   "csc": {
     "id": "csc-opioids-pregnancy",
     "alertId": "opioids-pregnancy",
@@ -452,11 +452,11 @@
     ]
   },
   "timings": {
-    "comprehend": 0,
-    "scan": 46,
+    "comprehend": 2,
+    "scan": 54,
     "adjudicate": 3,
     "verify": 0,
-    "total": 49
+    "total": 59
   },
   "warnings": []
 }
