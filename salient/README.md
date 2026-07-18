@@ -1,41 +1,59 @@
 # Salient
 
-Salient is a hackathon prototype for event-driven drug-safety surveillance over synthetic FHIR plus ambient transcripts.
+**The FDA knows the drug is dangerous. It doesn't know your patients.**
 
-## Quickstart
+Salient is an agentic drug-safety surveillance prototype built at the *Future of Agentic AI in Healthcare* hackathon (Anthropic × Abridge × Lightspeed, July 18 2026). When an FDA safety alert lands, point-of-prescribing CDS only checks the *next* prescription — nothing re-scans the patients already exposed. Salient does, in seconds:
+
+1. **Watch** — an FDA safety alert arrives (prose).
+2. **Comprehend** — Claude (`claude-fable-5`) parses it into a **Computable Safety Criterion** (CSC): strict, Zod-validated JSON a deterministic scanner can execute.
+3. **Scan** — a deterministic (no-LLM) pass over the panel: drug exposure, population, labs, gestational thresholds. Every exclusion is recorded and explainable. OTC drugs get a **monitor pathway** — a chart can't rule out over-the-counter use.
+4. **Adjudicate** — Claude reviews only the scanned candidates, weighing the *ambient transcript* against the structured chart (the chart says PRN; the conversation says "most days is the honest answer"). Verdicts: actionable / monitor / dismiss.
+5. **Verify** — every claim must cite a FHIR resource id or a verbatim transcript quote; a mechanical verifier re-checks each citation against the source record and **drops anything that doesn't match**.
+6. **Route** — actionable cases go to a prescriber-grouped review queue with a drafted action. Nothing auto-executes: a human approves or dismisses, and every decision lands in an append-only audit log.
+
+## Run it
 
 ```bash
 cd salient
 npm install
-npm run dev
+npm run dev          # dashboard at http://localhost:3000
 ```
 
-Open `http://localhost:3000`, choose an alert, and run the pipeline. The server loads the repo-root `.env` and expects `CLAUDE_API_KEY`; `SALIENT_MODEL` and `SALIENT_EFFORT` default to `claude-fable-5` and `medium`.
+Requires `CLAUDE_API_KEY` in `../.env` (repo root). Without a key the pipeline degrades to a deterministic fallback and says so in the run warnings.
 
-Useful checks:
+Other entry points:
 
 ```bash
-npm test
-npm run build
-npm run eval
-npm run run:demo -- opioids-pregnancy
+npm test                      # vitest: scan, CSC schema, citation verification
+npm run run:demo              # headless pipeline over all 3 alerts (terminal fallback)
+npm run run:demo -- <alertId> # one alert
+npx tsx scripts/seed-eval.ts  # (re)build eval ground truth
+npm run eval                  # precision/recall + citation pass rate on the eval panel
+SALIENT_NO_CACHE=1 npm run run:demo  # bypass the LLM disk cache ("it's really live")
 ```
 
-## Architecture
+## Evaluation
 
-```text
-Watch curated FDA excerpts
-  -> Comprehend: Claude -> CSC JSON, Zod validated, disk cached
-  -> Scan: deterministic TypeScript over 25 synthetic encounters
-  -> Adjudicate: Claude candidate review with required citations
-  -> Verify: FHIR id and transcript quote checks
-  -> Route: prescriber digest + JSON audit decisions
-```
+The eval panel is the 270-record AI-generated synthetic set **plus 24 seeded known-positive records built by construction** (cloned hosts with injected MedicationRequests/Conditions/transcript lines — see `scripts/seed-eval.ts`), scored against `data/eval/ground-truth.json`, which also contains 3 hand-audited organic positives. Ground truth never comes from the scanner itself.
 
-Runtime patient data is only `synthetic-ambient-fhir-25/synthetic-ambient-fhir-25.json`. `AI_synthetic_data/` is used only by `npm run eval`.
+Current result: **scan P=1.00, R=1.00; 52/52 adjudication claims pass mechanical citation verification.** Building this eval caught three real scanner bugs (postpartum, pregnancy-loss, and contraception-counseling records misread as current pregnancies) which are now fixed and covered.
 
-## Attribution
+## Built today vs. used
 
-Built today: Next.js app, pipeline engine, deterministic scan, citation verification, API routes, UI, tests, and eval harness.
+| Component | Provenance |
+|---|---|
+| Pipeline (CSC parser, deterministic scanner, adjudicator, mechanical citation verifier, router) | **Built at the event** |
+| Dashboard UI, SSE streaming, audit log, live alert ingest | **Built at the event** |
+| Eval harness + seeded ground truth | **Built at the event** |
+| The 3 curated alert texts | Condensed from public FDA safety communications (public domain) |
+| `synthetic-ambient-fhir-25` (live demo panel, 25 encounters) | Provided by Abridge for this event — the **only** data the live demo scans |
+| `AI_synthetic_data` (270 encounters) | Our synthetic dataset — **eval only**, never in the demo panel |
+| Claude API (`claude-fable-5`, medium effort) | Anthropic |
+| Next.js, React, Tailwind, Zod, Vitest | Open source |
 
-Used: public FDA safety communication/labeling concepts and URLs, the synthetic Abridge ambient FHIR dataset supplied for the event, the AI synthetic 270-encounter test set for eval only, and Anthropic Claude API calls. All data in this repository is synthetic.
+## Safety posture
+
+- No auto-execution: every case requires explicit human approve/dismiss.
+- Every LLM claim carries a citation that is mechanically re-verified; unverifiable claims are dropped before a clinician ever sees them.
+- A case with zero verified claims can never be actionable.
+- All patient data is synthetic.

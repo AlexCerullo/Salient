@@ -1,7 +1,7 @@
 {
   "alertId": "nsaids-pregnancy-20wk",
   "title": "NSAIDs at 20 weeks or later in pregnancy",
-  "createdAt": "2026-07-18T23:43:53.497Z",
+  "createdAt": "2026-07-18T23:48:31.283Z",
   "csc": {
     "id": "csc-nsaids-pregnancy-20wk",
     "alertId": "nsaids-pregnancy-20wk",
@@ -743,10 +743,10 @@
   "routed": {},
   "timings": {
     "comprehend": 1,
-    "scan": 31,
-    "adjudicate": 6,
+    "scan": 40,
+    "adjudicate": 7,
     "verify": 0,
-    "total": 38
+    "total": 48
   },
   "warnings": []
 }

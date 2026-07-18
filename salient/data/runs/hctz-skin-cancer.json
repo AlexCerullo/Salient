@@ -1,7 +1,7 @@
 {
   "alertId": "hctz-skin-cancer",
   "title": "Hydrochlorothiazide and non-melanoma skin cancer",
-  "createdAt": "2026-07-18T23:26:34.617Z",
+  "createdAt": "2026-07-18T23:48:31.319Z",
   "csc": {
     "id": "csc-hctz-skin-cancer",
     "alertId": "hctz-skin-cancer",
@@ -379,7 +379,11 @@
           "supportVerified": true,
           "dropped": false
         }
-      ]
+      ],
+      "claimAudit": {
+        "proposed": 3,
+        "verified": 3
+      }
     },
     {
       "caseId": "0a88a17618b4",
@@ -459,6 +463,10 @@
           "dropped": false
         }
       ],
+      "claimAudit": {
+        "proposed": 4,
+        "verified": 4
+      },
       "transcriptEscalation": "The chart alone shows only the HCTZ prescription; the transcript reveals the patient spends significant time outdoors daily (gardening is his main activity plus morning walks), increasing cumulative UV exposure relevant to the HCTZ non-melanoma skin cancer risk."
     },
     {
@@ -528,7 +536,11 @@
           "supportVerified": true,
           "dropped": false
         }
-      ]
+      ],
+      "claimAudit": {
+        "proposed": 3,
+        "verified": 3
+      }
     }
   ],
   "routed": {
@@ -543,11 +555,11 @@
     ]
   },
   "timings": {
-    "comprehend": 8329,
-    "scan": 52,
-    "adjudicate": 40800,
+    "comprehend": 0,
+    "scan": 30,
+    "adjudicate": 3,
     "verify": 0,
-    "total": 49181
+    "total": 33
   },
   "warnings": []
 }
