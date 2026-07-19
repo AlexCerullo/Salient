@@ -1,0 +1,462 @@
+{
+  "alertId": "opioids-pregnancy",
+  "title": "Opioid use in pregnancy and neonatal opioid withdrawal syndrome",
+  "createdAt": "2026-07-19T00:19:11.599Z",
+  "csc": {
+    "id": "csc-opioids-pregnancy",
+    "alertId": "opioids-pregnancy",
+    "title": "Opioids in pregnancy",
+    "source": {
+      "kind": "boxed_warning",
+      "url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-requires-labeling-changes-opioid-pain-medicines",
+      "datePublished": "2016-09-15"
+    },
+    "severityTier": 1,
+    "drugs": {
+      "names": [
+        "opioid",
+        "hydrocodone",
+        "oxycodone",
+        "tramadol",
+        "meperidine",
+        "codeine",
+        "morphine",
+        "fentanyl",
+        "hydromorphone",
+        "oxymorphone",
+        "methadone",
+        "buprenorphine",
+        "tapentadol",
+        "vicodin",
+        "norco",
+        "percocet",
+        "oxycontin",
+        "dilaudid",
+        "duragesic",
+        "ultram",
+        "demerol"
+      ],
+      "otcAvailable": false
+    },
+    "population": {
+      "sex": "female",
+      "pregnancy": true
+    },
+    "requiredMonitoring": [
+      "obstetric follow-up",
+      "pain-management follow-up",
+      "neonatal opioid withdrawal syndrome assessment at delivery"
+    ],
+    "recommendedActionTemplate": "Review {patient}'s opioid exposure ({medications}) during pregnancy. Counsel on neonatal opioid withdrawal risk, avoid abrupt discontinuation, and coordinate obstetric and pain-management follow-up with {prescriber}.",
+    "rationale": "FDA boxed warning: prolonged opioid use during pregnancy can cause neonatal opioid withdrawal syndrome, which may be life-threatening if not recognized and treated. Exposure during pregnancy requires clinician review and coordinated follow-up."
+  },
+  "funnel": {
+    "total": 25,
+    "scanCandidates": 1,
+    "actionable": 1,
+    "monitored": 0
+  },
+  "scan": {
+    "total": 25,
+    "counts": {
+      "drugMatched": 2,
+      "populationMatched": 4,
+      "labMatched": 25,
+      "interactionMatched": 25,
+      "monitorMatched": 0
+    },
+    "candidates": [
+      {
+        "sourceIndex": 18,
+        "patientId": "a3292ec4-64b6-20fc-480e-39e1f7f51e50",
+        "name": "Ms. Melodee Bobette Satterfield",
+        "reasons": [
+          "matched drug: Acetaminophen 300 MG / Hydrocodone Bitartrate 5 MG Oral Tablet; tramadol hydrochloride 50 MG Oral Tablet",
+          "matched population: pregnant/prenatal evidence present"
+        ],
+        "matchedEvidence": [
+          {
+            "kind": "medication",
+            "label": "Acetaminophen 300 MG / Hydrocodone Bitartrate 5 MG Oral Tablet",
+            "normalized": "acetaminophen 300 mg hydrocodone bitartrate 5 mg oral tablet|hydrocodone"
+          },
+          {
+            "kind": "medication",
+            "label": "tramadol hydrochloride 50 MG Oral Tablet",
+            "normalized": "tramadol hydrochloride 50 mg oral tablet|tramadol"
+          },
+          {
+            "kind": "condition",
+            "label": "Normal pregnancy (finding)",
+            "normalized": "normal pregnancy finding"
+          },
+          {
+            "kind": "condition",
+            "label": "Normal pregnancy (finding)",
+            "normalized": "normal pregnancy finding",
+            "resourceType": "Condition",
+            "resourceId": "a3292ec4-64b6-20fc-950f-c0a63feea063"
+          },
+          {
+            "kind": "population",
+            "label": "Prenatal intake visit — first pregnancy with chronic pain",
+            "normalized": "prenatal intake visit first pregnancy with chronic pain"
+          }
+        ],
+        "matchType": "exposure"
+      }
+    ],
+    "exclusions": [
+      {
+        "sourceIndex": 0,
+        "patientId": "3a3a1f26-ed23-f65c-a7df-c96fac56f464",
+        "name": "Mr. Ali Jerry Kuhic",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 1,
+        "patientId": "7bd9e5b0-5d4b-f10d-9579-f4813faf9cdc",
+        "name": "Mrs. Ariane Jan Runolfsson",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 2,
+        "patientId": "b342f27e-56bc-08ac-347c-323279c0d595",
+        "name": "Mrs. Clarence Reinger",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 3,
+        "patientId": "6b716621-5454-68ec-2017-362939ab6f36",
+        "name": "Mrs. Corinne Charlesetta Crooks",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 4,
+        "patientId": "966e9818-9cf6-8d71-74bc-36aef6643618",
+        "name": "Ms. Delana Jamie Gutkowski",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 5,
+        "patientId": "374e68b2-ee15-0852-cd48-3c7b6fd8e114",
+        "name": "Mr. Dick Larson",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 6,
+        "patientId": "4b4735a2-ee12-ec86-041f-3ba4d5c81ec9",
+        "name": "Mr. Elias Wisozk",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 7,
+        "patientId": "1ba8eeb9-bc93-7129-4390-0d2ddd560616",
+        "name": "Mr. Emory Britt Kovacek",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 8,
+        "patientId": "73043f9e-3254-a1d3-aa45-b82f0fc6d502",
+        "name": "Ms. Eva Julia Casas",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 9,
+        "patientId": "40cb7be2-9c26-6328-3aa0-71db4ed81e06",
+        "name": "Ms. Hiedi Moira Thiel",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 10,
+        "patientId": "74919836-2db2-2f73-d2cf-5287a180b0ff",
+        "name": "Mr. Isreal Delbert Howell",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 11,
+        "patientId": "be1b73f7-b0f0-0ca3-b24b-28369ce68943",
+        "name": "Mr. Issac Daniel Mayer",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 12,
+        "patientId": "6d4fd363-1ddb-74f8-516f-2fdc861cb736",
+        "name": "Mr. Julius Alphonso Renner",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 13,
+        "patientId": "256bea3d-7833-e7f8-74b4-0e4f7e299c73",
+        "name": "Mrs. Lala Kazuko Casper",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 14,
+        "patientId": "4c893b3e-df6f-a2f0-5d03-98714cbad61a",
+        "name": "Mr. Lamont Boyce Ernser",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 15,
+        "patientId": "1be66dc9-cf0b-cb78-e88e-ada9a9a5405b",
+        "name": "Ms. Latoyia Willene Wilkinson",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 16,
+        "patientId": "c2cbc55e-34dc-73c6-5ee4-cabe0c40fc32",
+        "name": "Mrs. Margarita Kaylene Rau",
+        "reasons": [
+          "no matching drug exposure"
+        ]
+      },
+      {
+        "sourceIndex": 17,
+        "patientId": "e1a7c2af-1e7f-300b-44f6-012ae75bbab1",
+        "name": "Mr. Marty Rodrick Toy",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 19,
+        "patientId": "b504cdf2-e13b-979e-9c4a-95456823e3dd",
+        "name": "Mrs. Monica Harriett Hilpert",
+        "reasons": [
+          "matched drug: Meperidine Hydrochloride 50 MG Oral Tablet",
+          "not pregnant"
+        ],
+        "nearMiss": "on Meperidine Hydrochloride 50 MG Oral Tablet but not pregnant"
+      },
+      {
+        "sourceIndex": 20,
+        "patientId": "d57244c4-df7d-9ce7-7878-38361fc0087b",
+        "name": "Mr. Nigel Giovanni Ankunding",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 21,
+        "patientId": "25fb1227-d194-b15e-e099-7cffcd6081ec",
+        "name": "Mrs. Nola Robert Kling",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 22,
+        "patientId": "693a049b-0fd5-c1af-a6ab-e31c329f2891",
+        "name": "Mr. Solomon Maria Macejkovic",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 23,
+        "patientId": "5e93dd7e-1639-0886-8d0e-80ac11f2785c",
+        "name": "Ms. Traci Saran Wiegand",
+        "reasons": [
+          "no matching drug exposure",
+          "not pregnant"
+        ]
+      },
+      {
+        "sourceIndex": 24,
+        "patientId": "01573895-dbf5-29c6-4ef9-cd09aecc51f6",
+        "name": "Mr. Van Loren O'Reilly",
+        "reasons": [
+          "no matching drug exposure",
+          "sex is male, not female",
+          "not pregnant"
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "caseId": "21c194576c8b",
+      "alertId": "opioids-pregnancy",
+      "patient": {
+        "sourceIndex": 18,
+        "patientId": "a3292ec4-64b6-20fc-480e-39e1f7f51e50",
+        "encounterId": "a3292ec4-64b6-20fc-55a4-b753a07a1881",
+        "name": "Ms. Melodee Bobette Satterfield",
+        "ageYears": 20,
+        "sex": "female",
+        "visitTitle": "Prenatal intake visit — first pregnancy with chronic pain",
+        "prescriber": "Dr. Marcus77 Schamberger479",
+        "clinic": "THE LOWELL GENERAL HOSPITAL"
+      },
+      "verdict": "actionable",
+      "actionable": true,
+      "matchType": "exposure",
+      "priority": "high",
+      "rationale": "Confirmed intrauterine first-trimester pregnancy (~9-10 weeks) with near-daily use of two opioids (hydrocodone/acetaminophen and tramadol) for chronic pain — a prolonged exposure that carries boxed-warning risk of neonatal opioid withdrawal syndrome and requires a coordinated, gradual taper now, not later.",
+      "draftedAction": "Contact the patient's pain specialist this week to co-develop a written, gradual opioid taper schedule; give the patient the written schedule, as she responds well to concrete plans. Counsel explicitly to continue current lowest-effective dosing until the taper begins and NOT to stop opioids abruptly, given maternal and fetal withdrawal risk. Start pregnancy-safe nonpharmacologic pain management (physical therapy referral, heat, stretching, activity pacing) and reassess pain control and taper progress at every prenatal visit. Document opioid exposure for delivery planning so the newborn is assessed for neonatal opioid withdrawal syndrome.",
+      "matchedEvidence": [
+        {
+          "kind": "medication",
+          "label": "Acetaminophen 300 MG / Hydrocodone Bitartrate 5 MG Oral Tablet",
+          "normalized": "acetaminophen 300 mg hydrocodone bitartrate 5 mg oral tablet|hydrocodone"
+        },
+        {
+          "kind": "medication",
+          "label": "tramadol hydrochloride 50 MG Oral Tablet",
+          "normalized": "tramadol hydrochloride 50 mg oral tablet|tramadol"
+        },
+        {
+          "kind": "condition",
+          "label": "Normal pregnancy (finding)",
+          "normalized": "normal pregnancy finding"
+        },
+        {
+          "kind": "condition",
+          "label": "Normal pregnancy (finding)",
+          "normalized": "normal pregnancy finding",
+          "resourceType": "Condition",
+          "resourceId": "a3292ec4-64b6-20fc-950f-c0a63feea063"
+        },
+        {
+          "kind": "population",
+          "label": "Prenatal intake visit — first pregnancy with chronic pain",
+          "normalized": "prenatal intake visit first pregnancy with chronic pain"
+        }
+      ],
+      "routeTo": "Dr. Marcus77 Schamberger479",
+      "claims": [
+        {
+          "text": "Patient is currently pregnant with a confirmed normal intrauterine pregnancy.",
+          "citation": {
+            "type": "fhir",
+            "resourceType": "Condition",
+            "resourceId": "a3292ec4-64b6-20fc-950f-c0a63feea063"
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "Patient is approximately nine to ten weeks gestation by dates.",
+          "citation": {
+            "type": "transcript",
+            "quote": "So nine, maybe ten weeks."
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "Patient uses hydrocodone and tramadol for chronic pain.",
+          "citation": {
+            "type": "transcript",
+            "quote": "Hydrocodone for the bad days, tramadol for the medium ones."
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "Opioid use is near-daily, higher intensity than a PRN listing implies.",
+          "citation": {
+            "type": "transcript",
+            "quote": "most days is the honest answer, lately"
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        },
+        {
+          "text": "Patient nearly discontinued opioids abruptly upon learning of the pregnancy, a dangerous impulse that may recur.",
+          "citation": {
+            "type": "transcript",
+            "quote": "I almost flushed everything down the toilet that night."
+          },
+          "verified": true,
+          "supportVerified": true,
+          "dropped": false
+        }
+      ],
+      "claimAudit": {
+        "proposed": 5,
+        "verified": 5
+      },
+      "transcriptEscalation": "The chart lists the opioids without frequency, but the transcript reveals near-daily use of both agents ('most days is the honest answer, lately') and a near-miss abrupt discontinuation attempt — both materially raise fetal/maternal risk and urgency of a structured taper."
+    }
+  ],
+  "routed": {
+    "Dr. Marcus77 Schamberger479": [
+      "21c194576c8b"
+    ]
+  },
+  "timings": {
+    "comprehend": 4,
+    "scan": 82,
+    "adjudicate": 5,
+    "verify": 0,
+    "total": 91
+  },
+  "warnings": []
+}

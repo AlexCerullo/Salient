@@ -1,0 +1,20 @@
+{
+  "id": "nsaids-pregnancy-20wk",
+  "title": "NSAIDs at 20 weeks or later in pregnancy",
+  "url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-recommends-avoiding-use-nsaids-pregnancy-20-weeks-or-later",
+  "datePublished": "2020-10-15",
+  "kind": "safety_communication",
+  "excerpt": "FDA recommends avoiding nonsteroidal anti-inflammatory drugs in pregnancy at 20 weeks or later because they can result in fetal renal dysfunction leading to low amniotic fluid. If NSAID treatment is necessary between 20 and 30 weeks, limit use to the lowest effective dose and shortest duration and consider ultrasound monitoring.",
+  "csc": {
+    "id": "csc-nsaids-pregnancy-20wk",
+    "alertId": "nsaids-pregnancy-20wk",
+    "title": "NSAIDs in pregnancy at 20 weeks or later",
+    "source": { "kind": "safety_communication", "url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-recommends-avoiding-use-nsaids-pregnancy-20-weeks-or-later", "datePublished": "2020-10-15" },
+    "severityTier": 1,
+    "drugs": { "names": ["naproxen", "ibuprofen", "nsaid", "aleve", "advil", "motrin"], "otcAvailable": true },
+    "population": { "sex": "female", "pregnancy": true, "monitorFromGestationalWeeks": 20 },
+    "requiredMonitoring": ["amniotic fluid monitoring if NSAID treatment extends beyond 48 hours"],
+    "recommendedActionTemplate": "Review {patient}'s NSAID exposure ({medications}) in pregnancy. Stop or substitute when clinically appropriate and consider amniotic-fluid monitoring if use is necessary.",
+    "rationale": "NSAID use at or after 20 weeks gestation can cause fetal renal dysfunction and oligohydramnios."
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "createdAt": "2026-07-18T23:38:24.471Z",
+  "dataset": "AI_synthetic_data/ai-synthetic-ambient-fhir-270.json + seeded known-positives (eval only)",
+  "groundTruth": "data/eval/ground-truth.json (seeded by construction + audited organic matches)",
+  "perAlert": [
+    {
+      "alertId": "nsaids-pregnancy-20wk",
+      "panelSize": 278,
+      "positives": 10,
+      "seededPositives": 8,
+      "scanCandidates": 10,
+      "scanPrecision": 1,
+      "scanRecall": 1,
+      "falsePositives": [],
+      "falseNegatives": [],
+      "adjudicatedSample": 4,
+      "verdicts": {
+        "monitor": 2,
+        "actionable": 2
+      },
+      "claimsProposed": 18,
+      "claimsVerified": 18,
+      "citationVerificationPassRate": 1
+    },
+    {
+      "alertId": "hctz-skin-cancer",
+      "panelSize": 278,
+      "positives": 9,
+      "seededPositives": 8,
+      "scanCandidates": 9,
+      "scanPrecision": 1,
+      "scanRecall": 1,
+      "falsePositives": [],
+      "falseNegatives": [],
+      "adjudicatedSample": 4,
+      "verdicts": {
+        "monitor": 1,
+        "actionable": 3
+      },
+      "claimsProposed": 15,
+      "claimsVerified": 15,
+      "citationVerificationPassRate": 1
+    },
+    {
+      "alertId": "opioids-pregnancy",
+      "panelSize": 278,
+      "positives": 8,
+      "seededPositives": 8,
+      "scanCandidates": 8,
+      "scanPrecision": 1,
+      "scanRecall": 1,
+      "falsePositives": [],
+      "falseNegatives": [],
+      "adjudicatedSample": 4,
+      "verdicts": {
+        "actionable": 4
+      },
+      "claimsProposed": 19,
+      "claimsVerified": 19,
+      "citationVerificationPassRate": 1
+    }
+  ],
+  "overall": {
+    "scanPrecision": 1,
+    "scanRecall": 1,
+    "citationVerificationPassRate": 1
+  }
+}

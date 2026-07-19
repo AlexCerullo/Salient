@@ -1,0 +1,143 @@
+{
+  "opioids-pregnancy": [
+    {
+      "recordId": "seed-opioids-pregnancy-01::7f7937ce-fbbf-447f-b1bb-e135fc2d537c::213a576f-9c4b-458c-9f4c-9fb3467b2335",
+      "source": "seeded",
+      "note": "seeded: pregnant (8w) on oxycodone, host 7f7937ce-fbbf-447f-b1bb-e135fc2d537c::213a576f-9c4b-458c-9f4c-9fb3467b2335"
+    },
+    {
+      "recordId": "seed-opioids-pregnancy-02::b193a1e3-2a77-5b0e-9403-a62e8eabd90b::be3781d7-667e-57b7-8cd9-796dfd883c8d",
+      "source": "seeded",
+      "note": "seeded: pregnant (11w) on hydrocodone, host b193a1e3-2a77-5b0e-9403-a62e8eabd90b::be3781d7-667e-57b7-8cd9-796dfd883c8d"
+    },
+    {
+      "recordId": "seed-opioids-pregnancy-03::b9d661ea-56f0-4fee-b4aa-02189dcd8bba::b55a4235-09ff-4397-b911-1dd652107367",
+      "source": "seeded",
+      "note": "seeded: pregnant (14w) on tramadol, host b9d661ea-56f0-4fee-b4aa-02189dcd8bba::b55a4235-09ff-4397-b911-1dd652107367"
+    },
+    {
+      "recordId": "seed-opioids-pregnancy-04::311c7471-c53a-520d-a6ca-804e164dcf01::9c0173f9-6fc3-5f03-8608-399fef90c872",
+      "source": "seeded",
+      "note": "seeded: pregnant (17w) on codeine, host 311c7471-c53a-520d-a6ca-804e164dcf01::9c0173f9-6fc3-5f03-8608-399fef90c872"
+    },
+    {
+      "recordId": "seed-opioids-pregnancy-05::91f01f55-31bb-4837-9cbe-1b8d196b7f4b::d904d535-fb82-4c30-9559-0d1019cd7019",
+      "source": "seeded",
+      "note": "seeded: pregnant (8w) on oxycodone, host 91f01f55-31bb-4837-9cbe-1b8d196b7f4b::d904d535-fb82-4c30-9559-0d1019cd7019"
+    },
+    {
+      "recordId": "seed-opioids-pregnancy-06::c8686e61-5665-4c22-abf9-f0204dcae031::4706dc77-ff5e-4871-bd95-3682aa5d5b6d",
+      "source": "seeded",
+      "note": "seeded: pregnant (11w) on hydrocodone, host c8686e61-5665-4c22-abf9-f0204dcae031::4706dc77-ff5e-4871-bd95-3682aa5d5b6d"
+    },
+    {
+      "recordId": "seed-opioids-pregnancy-07::ec13ea31-26ca-5464-9873-bb0f443d78c0::7784dc36-faae-5b9a-a362-0fcace8c67f4",
+      "source": "seeded",
+      "note": "seeded: pregnant (14w) on tramadol, host ec13ea31-26ca-5464-9873-bb0f443d78c0::7784dc36-faae-5b9a-a362-0fcace8c67f4"
+    },
+    {
+      "recordId": "seed-opioids-pregnancy-08::63c570a8-da2f-4cb0-a0ea-9f6f25a110ac::04d2bea5-a84c-4aeb-aaa8-9f1f1b763587",
+      "source": "seeded",
+      "note": "seeded: pregnant (17w) on codeine, host 63c570a8-da2f-4cb0-a0ea-9f6f25a110ac::04d2bea5-a84c-4aeb-aaa8-9f1f1b763587"
+    }
+  ],
+  "nsaids-pregnancy-20wk": [
+    {
+      "recordId": "seed-nsaids-pregnancy-20wk-01::b5fe3bad-5d4a-50a5-b82f-e916eda821af::e0e1935b-2284-5a40-adc7-7df327c68756",
+      "source": "seeded",
+      "note": "seeded: pregnant (20w) on ibuprofen, host b5fe3bad-5d4a-50a5-b82f-e916eda821af::e0e1935b-2284-5a40-adc7-7df327c68756"
+    },
+    {
+      "recordId": "seed-nsaids-pregnancy-20wk-02::3fddab21-93c3-581e-9791-b4bdae601d0e::5c829b62-e4f7-5906-9e3e-f02a1584e567",
+      "source": "seeded",
+      "note": "seeded: pregnant (24w) on naproxen, host 3fddab21-93c3-581e-9791-b4bdae601d0e::5c829b62-e4f7-5906-9e3e-f02a1584e567"
+    },
+    {
+      "recordId": "seed-nsaids-pregnancy-20wk-03::9df3f091-ab51-44b6-9548-eba3d599a09b::48724fb8-685f-4007-8173-02fd0bcdc3fe",
+      "source": "seeded",
+      "note": "seeded: pregnant (28w) on ibuprofen, host 9df3f091-ab51-44b6-9548-eba3d599a09b::48724fb8-685f-4007-8173-02fd0bcdc3fe"
+    },
+    {
+      "recordId": "seed-nsaids-pregnancy-20wk-04::8f4e5e2d-d217-4450-9ed8-4a74b575a141::5d02a9a4-64f9-4eb2-9f62-c3b76c019ff3",
+      "source": "seeded",
+      "note": "seeded: pregnant (20w) on naproxen, host 8f4e5e2d-d217-4450-9ed8-4a74b575a141::5d02a9a4-64f9-4eb2-9f62-c3b76c019ff3"
+    },
+    {
+      "recordId": "seed-nsaids-pregnancy-20wk-05::75c94461-02e9-5a29-9948-d56cc5f0cc7f::a2ea86e4-86be-56c0-8a6c-aab8a8c87ed4",
+      "source": "seeded",
+      "note": "seeded: pregnant (24w) on ibuprofen, host 75c94461-02e9-5a29-9948-d56cc5f0cc7f::a2ea86e4-86be-56c0-8a6c-aab8a8c87ed4"
+    },
+    {
+      "recordId": "seed-nsaids-pregnancy-20wk-06::6ff1547c-0d73-4722-ba95-2edd6fd1b18f::591188ad-b30b-48f4-8fb4-7a8119f49545",
+      "source": "seeded",
+      "note": "seeded: pregnant (28w) on naproxen, host 6ff1547c-0d73-4722-ba95-2edd6fd1b18f::591188ad-b30b-48f4-8fb4-7a8119f49545"
+    },
+    {
+      "recordId": "seed-nsaids-pregnancy-20wk-07::cc5a30c8-6da1-4a52-898d-70602cdfdeb0::53fb906d-8fbd-4a0e-b1db-f85e5019dc69",
+      "source": "seeded",
+      "note": "seeded: pregnant (20w) on ibuprofen, host cc5a30c8-6da1-4a52-898d-70602cdfdeb0::53fb906d-8fbd-4a0e-b1db-f85e5019dc69"
+    },
+    {
+      "recordId": "seed-nsaids-pregnancy-20wk-08::8c28888d-e66d-5f65-94e5-36fbb774cb43::b40ed8cb-a4c7-54f2-a174-51fb5e914172",
+      "source": "seeded",
+      "note": "seeded: pregnant (24w) on naproxen, host 8c28888d-e66d-5f65-94e5-36fbb774cb43::b40ed8cb-a4c7-54f2-a174-51fb5e914172"
+    },
+    {
+      "recordId": "939d1f77-367b-4d38-b5db-ed0acb65be2d::d1ae8c0e-8ec9-4dd6-b955-ce3fca5578c9",
+      "source": "organic",
+      "note": "organic: pregnant, first trimester (monitor: below 20-week threshold)"
+    },
+    {
+      "recordId": "03c55b42-6b5e-5b92-b321-eddf5c02ae01::bb491257-2212-53a0-823e-3e66c55dcb35",
+      "source": "organic",
+      "note": "organic: pregnant ~30 weeks (monitor: OTC exposure check due now)"
+    }
+  ],
+  "hctz-skin-cancer": [
+    {
+      "recordId": "seed-hctz-skin-cancer-01::69e2d5bd-57d8-5d53-8a3d-074f02831cfc::ca1c5f68-e621-56fa-b2e6-cc7060251cca",
+      "source": "seeded",
+      "note": "seeded: on HCTZ 25mg, host 69e2d5bd-57d8-5d53-8a3d-074f02831cfc::ca1c5f68-e621-56fa-b2e6-cc7060251cca"
+    },
+    {
+      "recordId": "seed-hctz-skin-cancer-02::bde611de-2839-4b9b-b525-e49a590cdcde::e108accb-57f3-49db-be76-dad99de36106",
+      "source": "seeded",
+      "note": "seeded: on HCTZ 25mg, host bde611de-2839-4b9b-b525-e49a590cdcde::e108accb-57f3-49db-be76-dad99de36106"
+    },
+    {
+      "recordId": "seed-hctz-skin-cancer-03::a6baf24d-897d-4015-aed1-8be63ef2d88d::c0f8955d-fe7c-4543-a10a-d10413b47da5",
+      "source": "seeded",
+      "note": "seeded: on HCTZ 25mg, host a6baf24d-897d-4015-aed1-8be63ef2d88d::c0f8955d-fe7c-4543-a10a-d10413b47da5"
+    },
+    {
+      "recordId": "seed-hctz-skin-cancer-04::ae649aaf-5aa7-498a-8a31-5c59fc390e9d::9f7f1c92-e93f-4127-9fda-a0c9df078197",
+      "source": "seeded",
+      "note": "seeded: on HCTZ 25mg, host ae649aaf-5aa7-498a-8a31-5c59fc390e9d::9f7f1c92-e93f-4127-9fda-a0c9df078197"
+    },
+    {
+      "recordId": "seed-hctz-skin-cancer-05::d22bf233-f48a-4614-bc3e-2289e78b3df2::154d77c2-e96e-44dc-ac2f-346354fa9ac6",
+      "source": "seeded",
+      "note": "seeded: on HCTZ 25mg, host d22bf233-f48a-4614-bc3e-2289e78b3df2::154d77c2-e96e-44dc-ac2f-346354fa9ac6"
+    },
+    {
+      "recordId": "seed-hctz-skin-cancer-06::e36c4f54-643b-5a4e-bdad-5f544dac4b05::f2b5cde4-8b6e-5a8c-ae66-1b9f946d226a",
+      "source": "seeded",
+      "note": "seeded: on HCTZ 25mg, host e36c4f54-643b-5a4e-bdad-5f544dac4b05::f2b5cde4-8b6e-5a8c-ae66-1b9f946d226a"
+    },
+    {
+      "recordId": "seed-hctz-skin-cancer-07::5b43fa52-69dd-5135-b04d-3c1a1cd22432::bbee2da2-f9b7-573c-85bc-570bbf22de8f",
+      "source": "seeded",
+      "note": "seeded: on HCTZ 25mg, host 5b43fa52-69dd-5135-b04d-3c1a1cd22432::bbee2da2-f9b7-573c-85bc-570bbf22de8f"
+    },
+    {
+      "recordId": "seed-hctz-skin-cancer-08::ade7f097-3b85-5b37-a460-1f570e000846::62d9fec5-5e5c-5152-a9a8-ab6fea171604",
+      "source": "seeded",
+      "note": "seeded: on HCTZ 25mg, host ade7f097-3b85-5b37-a460-1f570e000846::62d9fec5-5e5c-5152-a9a8-ab6fea171604"
+    },
+    {
+      "recordId": "e76d302b-09c4-45d8-a92a-6d4d17fb7530::77b168f3-4853-486e-bae6-6c4a352771c9",
+      "source": "organic",
+      "note": "organic: geriatric patient on HCTZ 25mg"
+    }
+  ]
+}
