@@ -174,6 +174,17 @@ export default function Dashboard() {
     }
   }
 
+  async function resetRun() {
+    if (running) return;
+    await fetch(`/api/runs/${selected}`, { method: "DELETE" });
+    setRun(null);
+    setStages(freshStages());
+    setLiveCases([]);
+    setCaseId(null);
+    setError(null);
+    loadAlerts();
+  }
+
   async function decide(c: any, decision: "approve" | "dismiss") {
     const res = await fetch(`/api/cases/${c.caseId}/decision`, {
       method: "POST",
@@ -268,9 +279,16 @@ export default function Dashboard() {
                 </button>
               ))}
             </div>
-            <button onClick={startRun} disabled={running} className="mt-3 flex w-full items-center justify-center gap-2 rounded-md bg-emerald-600 px-3 py-2 font-semibold text-white transition hover:bg-emerald-500 disabled:opacity-40">
-              <Play size={16} /> {running ? "Running..." : "Run panel scan"}
-            </button>
+            <div className="mt-3 flex gap-2">
+              <button onClick={startRun} disabled={running} className="flex flex-1 items-center justify-center gap-2 rounded-md bg-emerald-600 px-3 py-2 font-semibold text-white transition hover:bg-emerald-500 disabled:opacity-40">
+                <Play size={16} /> {running ? "Running..." : "Run panel scan"}
+              </button>
+              {run && !running && (
+                <button onClick={resetRun} title="Clear this run and go back to blank" className="rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-600 transition hover:border-slate-400 hover:bg-slate-50">
+                  Reset
+                </button>
+              )}
+            </div>
           </div>
 
           {selectedAlert && (
